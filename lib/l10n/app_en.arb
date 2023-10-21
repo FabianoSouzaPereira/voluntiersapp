@@ -1,7 +1,10 @@
 {
-  "helloWorld": "Hello World!",
-  "@helloWorld": {
-    "description": "The conventional newborn programmer greeting"
+  "addEvent":"Add new entre",
+  "leaders":"{count, plural, =0{no leaders} =1{1 leader} other{{count} leaders}}",
+  "voluntiers":"{count, plural, =0{voluntier} =1{voluntiers} other{{count} voluntiers}}",
+  "@voluntiers":{
+    "description": "Plural of voluntiers"
   },
-  "voluntiers":"Voluntiers"
+  "teams":"{count, plural, =0{team} =1{Teams} other{{count} teams}}",
+  "event":"{count, plural, =0{event} =1{events} other{{count} events}}"
 }

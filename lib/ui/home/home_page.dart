@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
-import 'package:voluntiersapp/ui/home/home_cubit.dart';
-import 'package:voluntiersapp/ui/home/home_page_state.dart';
 import 'package:voluntiersapp/ui/home/widgets/home_content.dart';
 import 'package:voluntiersapp/ui/home/widgets/home_topbar.dart';
 

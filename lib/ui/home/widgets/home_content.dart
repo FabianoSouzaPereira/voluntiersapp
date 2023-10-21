@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:voluntiersapp/ui/home/home_cubit.dart';
 import 'package:voluntiersapp/ui/home/home_page_state.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeContent extends StatelessWidget {
   HomeContent({super.key});
@@ -11,6 +12,7 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = AppLocalizations.of(context)!;
     return BlocProvider<HomeCubit>(
       create: (_) => cubit,
       child: Expanded(
@@ -22,7 +24,7 @@ class HomeContent extends StatelessWidget {
           child: Scaffold(
             appBar: AppBar(
               backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-              title: const Text('Contador'),
+              title: Text(locale.voluntiers(1)[0].toUpperCase() + locale.voluntiers(1).substring(1).toLowerCase()),
             ),
             body: Center(
               child: Column(

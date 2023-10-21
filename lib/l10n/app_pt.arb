@@ -1,7 +1,4 @@
 {
-  "helloWorld": "Holá mundo!",
-  "@helloWorld": {
-    "description": "A saudação convencional do programador recém-nascido"
-  },
+  "addEvent":"Add new entre",
   "voluntiers":"Voluntários"
 }
