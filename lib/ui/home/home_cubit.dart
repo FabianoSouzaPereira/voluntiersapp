@@ -11,8 +11,6 @@ class HomeCubit extends Cubit<HomeState> {
     if (currentState is HomeStateUpdated) {
       final newCounter = currentState.counter + 1;
 
-      print('incremente state = $newCounter');
-
       emit(HomeStateUpdated(newCounter));
     } else if (currentState is HomeInitial) {
       emit(HomeStateUpdated(1));
