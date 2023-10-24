@@ -7,6 +7,15 @@ class CardCubit extends Cubit<List<HomeCard>> {
 
   CardCubit(this.homeCubit) : super([]);
 
+  void reorderCards(int oldIndex, int newIndex) {
+    if (newIndex > oldIndex) {
+      newIndex -= 1;
+    }
+    final item = state.removeAt(oldIndex);
+    state.insert(newIndex, item);
+    emit(state.toList());
+  }
+
   void addCard(HomeCard card) {
     state.add(card);
     emit(state.toList());
