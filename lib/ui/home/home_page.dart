@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
           ),
           const HomeTopBar(),
           const SizedBox(height: 16),
-          HomeContent(),
+          const HomeContent(),
         ],
       ),
     );
