@@ -1,9 +1,28 @@
-abstract class HomeState {}
+import 'package:voluntiersapp/ui/home/widgets/home_card.dart';
 
-class HomeInitial extends HomeState {}
+abstract class HomeState {
+  final List<HomeCard> cards;
+
+  HomeState(this.cards);
+
+  // Método abstrato que todas as classes filhas devem implementar
+  HomeState copyWith({required List<HomeCard> cards});
+}
+
+class HomeInitial extends HomeState {
+  HomeInitial() : super(const []);
+
+  @override
+  HomeState copyWith({required List<HomeCard> cards}) {
+    return HomeInitial();
+  }
+}
 
 class HomeStateUpdated extends HomeState {
-  final int counter;
+  HomeStateUpdated(List<HomeCard> cards) : super(cards);
 
-  HomeStateUpdated(this.counter);
+  @override
+  HomeState copyWith({required List<HomeCard> cards}) {
+    return HomeStateUpdated(cards);
+  }
 }

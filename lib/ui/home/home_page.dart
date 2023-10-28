@@ -10,10 +10,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var viewPaddingTop = MediaQuery.of(context).viewPadding.top;
-
     return Container(
       color: Theme.of(context).colorScheme.background,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SizedBox(
             height: viewPaddingTop,

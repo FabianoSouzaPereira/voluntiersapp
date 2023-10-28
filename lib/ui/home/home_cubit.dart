@@ -1,19 +1,16 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:voluntiersapp/ui/home/home_page_state.dart';
+import 'package:voluntiersapp/ui/home/widgets/home_card.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  int counter = 0;
+  final List<HomeCard> cards = [];
 
   HomeCubit() : super(HomeInitial());
 
-  void incrementCounter() {
-    final currentState = state;
-    if (currentState is HomeStateUpdated) {
-      final newCounter = currentState.counter + 1;
-
-      emit(HomeStateUpdated(newCounter));
-    } else if (currentState is HomeInitial) {
-      emit(HomeStateUpdated(1));
+  void onCardAdded(HomeCard card) {
+    if (!cards.contains(card)) {
+      cards.add(card);
+      emit(HomeStateUpdated(List<HomeCard>.from(cards)));
     }
   }
 }

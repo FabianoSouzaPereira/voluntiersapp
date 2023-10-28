@@ -13,12 +13,16 @@ class CardCubit extends Cubit<List<HomeCard>> {
     }
     final item = state.removeAt(oldIndex);
     state.insert(newIndex, item);
+
     emit(state.toList());
   }
 
   void addCard(HomeCard card) {
     state.add(card);
     emit(state.toList());
+
+    // Envia uma notificação para o HomeCubit
+    homeCubit.onCardAdded(card);
   }
 
   void removeCard(HomeCard card) {

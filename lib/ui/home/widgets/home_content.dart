@@ -9,17 +9,18 @@ import 'package:voluntiersapp/ui/home/widgets/home_card.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeContent extends StatelessWidget {
-  const HomeContent({Key? key});
+  const HomeContent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var cubit = GetIt.instance<HomeCubit>();
     var cardCubit = GetIt.instance<CardCubit>();
     final locale = AppLocalizations.of(context)!;
-
+    print("REDESENHADO BlocProvider<HomeCubit>");
     return BlocProvider<HomeCubit>(
       create: (_) => cubit,
       child: Expanded(
+        flex: 1,
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(16),
@@ -40,12 +41,14 @@ class HomeContent extends StatelessWidget {
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
+                            mainAxisSize: MainAxisSize.max,
                             children: [
                               BlocBuilder<CardCubit, List<HomeCard>>(
                                 builder: (context, cardList) {
+                                  print("REDESENHADO BlocBuilder<CardCubit, List<HomeCard>>");
                                   return Container(
                                     constraints: BoxConstraints(
-                                      maxHeight: MediaQuery.of(context).size.height * 0.7,
+                                      maxHeight: MediaQuery.of(context).size.height * 0.2,
                                       minHeight: 0,
                                     ),
                                     child: ReorderableListView(
