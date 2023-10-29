@@ -10,7 +10,7 @@ class HomeCubit extends Cubit<HomeState> {
   void onCardAdded(HomeCard card) {
     if (!cards.contains(card)) {
       cards.add(card);
-      emit(HomeStateUpdated(List<HomeCard>.from(cards)));
+      emit(HomeStateUpdated(cards));
     }
   }
 }

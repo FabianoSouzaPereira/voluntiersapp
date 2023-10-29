@@ -23,6 +23,6 @@ class HomeStateUpdated extends HomeState {
 
   @override
   HomeState copyWith({required List<HomeCard> cards}) {
-    return HomeStateUpdated(cards);
+    return HomeStateUpdated([...cards]);
   }
 }

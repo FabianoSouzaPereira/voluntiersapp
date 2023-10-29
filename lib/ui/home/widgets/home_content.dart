@@ -16,7 +16,6 @@ class HomeContent extends StatelessWidget {
     var cubit = GetIt.instance<HomeCubit>();
     var cardCubit = GetIt.instance<CardCubit>();
     final locale = AppLocalizations.of(context)!;
-    print("REDESENHADO BlocProvider<HomeCubit>");
     return BlocProvider<HomeCubit>(
       create: (_) => cubit,
       child: Expanded(
@@ -44,40 +43,41 @@ class HomeContent extends StatelessWidget {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               BlocBuilder<CardCubit, List<HomeCard>>(
-                                builder: (context, cardList) {
-                                  print("REDESENHADO BlocBuilder<CardCubit, List<HomeCard>>");
-                                  return Container(
-                                    constraints: BoxConstraints(
-                                      maxHeight: MediaQuery.of(context).size.height * 0.2,
-                                      minHeight: 0,
-                                    ),
-                                    child: ReorderableListView(
-                                      onReorder: (oldIndex, newIndex) {
-                                        cardCubit.reorderCards(oldIndex, newIndex);
-                                      },
-                                      scrollDirection: Axis.vertical,
-                                      children: cardList.map((item) {
-                                        return Column(
-                                          children: [
-                                            ReorderableItem(
-                                              key: ValueKey(item.key),
-                                              childBuilder: (BuildContext context, ReorderableItemState state) {
-                                                return Builder(
-                                                  builder: (context) {
-                                                    return item;
-                                                  },
-                                                );
-                                              },
-                                            ),
-                                          ],
-                                        );
-                                      }).toList(),
-                                    ),
-                                  );
+                                builder: (context, state) {
+                                  if (state.isEmpty) {
+                                    return const Center(child: Text('Loading...'));
+                                  } else {
+                                    return Container(
+                                      constraints: BoxConstraints(
+                                        maxHeight: MediaQuery.of(context).size.height * 0.2,
+                                        minHeight: 0,
+                                      ),
+                                      child: ReorderableListView(
+                                        onReorder: (oldIndex, newIndex) {
+                                          cardCubit.reorderCards(oldIndex, newIndex);
+                                        },
+                                        scrollDirection: Axis.vertical,
+                                        children: state.map((item) {
+                                          return Column(
+                                            children: [
+                                              ReorderableItem(
+                                                key: ValueKey(item.key),
+                                                childBuilder: (BuildContext context, ReorderableItemState state) {
+                                                  return Builder(
+                                                    builder: (context) {
+                                                      return item;
+                                                    },
+                                                  );
+                                                },
+                                              ),
+                                            ],
+                                          );
+                                        }).toList(),
+                                      ),
+                                    );
+                                  }
                                 },
                               ),
-
-                              // Adicione um botão ou ação para adicionar novos cards
                               FloatingActionButton(
                                 onPressed: () {
                                   cardCubit.addCard(
