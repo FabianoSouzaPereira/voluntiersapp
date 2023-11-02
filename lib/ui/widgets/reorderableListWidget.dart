@@ -21,6 +21,7 @@ class _ReorderableListWidgetState extends State<ReorderableListWidget> {
   @override
   Widget build(BuildContext context) {
     return ReorderableListView(
+      buildDefaultDragHandles: true,
       onReorder: (oldIndex, newIndex) {
         setState(() {
           if (newIndex > oldIndex) {

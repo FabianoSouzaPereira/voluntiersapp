@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:voluntiersapp/ui/home/home_cubit.dart';
 import 'package:voluntiersapp/ui/home/widgets/card_cubit.dart';
+import 'package:voluntiersapp/ui/settings/settings_cubit.dart';
 import 'package:voluntiersapp/ui/users/users_cubit.dart';
 
 final getIt = GetIt.instance;
@@ -34,5 +35,9 @@ Future<void> setupLocator() async {
 
   getIt.registerFactory<UsersCubit>(
     () => UsersCubit(),
+  );
+
+  getIt.registerFactory<SettingsCubit>(
+    () => SettingsCubit(),
   );
 }

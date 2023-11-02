@@ -6,6 +6,7 @@ import 'package:voluntiersapp/ui/home/home_cubit.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:voluntiersapp/ui/home/widgets/card_cubit.dart';
+import 'package:voluntiersapp/ui/settings/settings_cubit.dart';
 import 'package:voluntiersapp/ui/users/users_cubit.dart';
 
 void main() async {
@@ -28,6 +29,9 @@ class MyApp extends StatelessWidget {
         ),
         Provider<UsersCubit>(
           create: (_) => getIt<UsersCubit>(),
+        ),
+        Provider<SettingsCubit>(
+          create: (_) => getIt<SettingsCubit>(),
         ),
       ],
       child: MaterialApp.router(

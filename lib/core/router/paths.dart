@@ -2,3 +2,4 @@
 
 const HomePagePath = '/home';
 const UserPagePath = '/users';
+const SettingsPagePath = '/settings';

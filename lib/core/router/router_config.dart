@@ -5,6 +5,7 @@ import 'package:voluntiersapp/core/router/router_observer.dart';
 import 'package:voluntiersapp/core/router/routes.dart' as routes;
 import 'package:voluntiersapp/ui/home/home_page.dart';
 import 'package:voluntiersapp/ui/users/users_page.dart';
+import 'package:voluntiersapp/ui/settings/settings_page.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -26,8 +27,13 @@ GoRouter router = GoRouter(
         }),
     GoRoute(
       path: paths.UserPagePath,
-      name: routes.UsersPageSate,
+      name: routes.UsersPageRoute,
       builder: (context, state) => const UserPage(title: 'User'),
+    ),
+    GoRoute(
+      path: paths.SettingsPagePath,
+      name: routes.SettingsPageRoute,
+      builder: (context, state) => const SettingsPage(title: 'Settings'),
     ),
   ],
 );

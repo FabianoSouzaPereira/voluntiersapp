@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:voluntiersapp/ui/home/widgets/borderedCardWidget.dart';
+import 'package:go_router/go_router.dart';
 import 'package:voluntiersapp/ui/widgets/reorderableListWidget.dart';
+import 'package:voluntiersapp/core/router/paths.dart' as paths;
 
 class UserPage extends StatelessWidget {
   final String title;
@@ -15,7 +16,7 @@ class UserPage extends StatelessWidget {
         backgroundColor: Colors.black26,
         appBar: AppBar(
           title: const Text(
-            "Voluntiers",
+            "Users",
             style: TextStyle(
               color: Colors.white,
               backgroundColor: Colors.black,
@@ -38,18 +39,18 @@ class UserPage extends StatelessWidget {
                 Expanded(
                   child: ReorderableListWidget(
                     items: [
-                      BorderedCardWidgets(
+                      GestureDetector(
                         child: const Text(
-                          "TEXTE 1",
+                          "voltar para home",
                           style: TextStyle(
-                            color: Colors.white,
-                            backgroundColor: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                            color: Colors.blue,
+                            decoration: TextDecoration.underline,
                           ),
                         ),
+                        onTap: () {
+                          GoRouter.of(context).go(paths.HomePagePath);
+                        },
                       ),
-                      BorderedCardWidgets(child: const Text("TEXTE 2")),
                     ],
                   ),
                 ),

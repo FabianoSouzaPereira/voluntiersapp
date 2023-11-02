@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:voluntiersapp/ui/widgets/reorderableListWidget.dart';
-import 'package:voluntiersapp/ui/home/widgets/BorderedCardWidget.dart';
 import 'package:voluntiersapp/core/router/paths.dart' as paths;
 
-class HomePage extends StatelessWidget {
+class SettingsPage extends StatelessWidget {
   final String title;
 
-  const HomePage({Key? key, required this.title}) : super(key: key);
+  const SettingsPage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var viewPaddingTop = MediaQuery.of(context).viewPadding.top;
     return SafeArea(
       top: true,
       child: Scaffold(
         backgroundColor: Colors.black26,
         appBar: AppBar(
           title: const Text(
-            "Voluntiers",
+            "Settings",
             style: TextStyle(
               color: Colors.white,
               backgroundColor: Colors.black,
@@ -37,28 +36,24 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: [
-                SizedBox(height: viewPaddingTop),
                 Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: ReorderableListWidget(
-                      items: const [
-                        BorderedCardWidgets(
-                          route: paths.UserPagePath,
-                          title: 'Users',
-                          description: "Description users",
+                  child: ReorderableListWidget(
+                    items: [
+                      GestureDetector(
+                        child: const Text(
+                          "voltar para home",
+                          style: TextStyle(
+                            color: Colors.blue, // Cor do texto
+                            decoration: TextDecoration.underline, // Adiciona sublinhado para indicar clique
+                          ),
                         ),
-                        BorderedCardWidgets(
-                          route: paths.SettingsPagePath,
-                          title: 'Setttings',
-                          description: "Description Settings",
-                        ),
-                      ],
-                    ),
+                        onTap: () {
+                          GoRouter.of(context).go(paths.HomePagePath);
+                        },
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(height: 20),
               ],
             ),
           ),
