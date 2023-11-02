@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:voluntiersapp/ui/home/widgets/home_content.dart';
-import 'package:voluntiersapp/ui/home/widgets/home_topbar.dart';
+import 'package:voluntiersapp/ui/widgets/reorderableListWidget.dart';
+import 'package:voluntiersapp/ui/home/widgets/BorderedCardWidget.dart';
 
 class HomePage extends StatelessWidget {
   final String title;
@@ -9,19 +9,63 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> items = [BorderedCardWidgets(child: const Card())];
+
     var viewPaddingTop = MediaQuery.of(context).viewPadding.top;
-    return Container(
-      color: Theme.of(context).colorScheme.background,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(
-            height: viewPaddingTop,
+    return SafeArea(
+      top: true,
+      child: Scaffold(
+        backgroundColor: Colors.black26,
+        appBar: AppBar(
+          title: const Text(
+            "Voluntiers",
+            style: TextStyle(
+              color: Colors.white,
+              backgroundColor: Colors.black,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-          const HomeTopBar(),
-          const SizedBox(height: 16),
-          const HomeContent(),
-        ],
+          backgroundColor: Colors.black,
+        ),
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          color: Colors.transparent,
+          child: Container(
+            color: Colors.transparent,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                SizedBox(height: viewPaddingTop),
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: ReorderableListWidget(
+                      items: const [
+                        BorderedCardWidgets(
+                          child: Text(
+                            "TEXTE 1",
+                            style: TextStyle(
+                              color: Colors.white,
+                              backgroundColor: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        BorderedCardWidgets(child: Text("TEXTE 2")),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

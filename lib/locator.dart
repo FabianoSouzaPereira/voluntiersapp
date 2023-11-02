@@ -1,11 +1,15 @@
 import 'package:get_it/get_it.dart';
 import 'package:voluntiersapp/ui/home/home_cubit.dart';
 import 'package:voluntiersapp/ui/home/widgets/card_cubit.dart';
+import 'package:voluntiersapp/ui/users/users_cubit.dart';
 
 final getIt = GetIt.instance;
 
 Future<void> setupLocator() async {
-// Packeges
+  // Packeges
+
+//  final sharedPreferences = await SharedPreferences.getInstance();
+//  getIt.registerLazySingleton(() => sharedPreferences);
 
 // Core
 
@@ -25,6 +29,10 @@ Future<void> setupLocator() async {
 *  and there must be communication between them 
 */
   getIt.registerFactory<CardCubit>(
-    () => CardCubit(getIt<HomeCubit>()),
+    () => CardCubit(),
+  );
+
+  getIt.registerFactory<UsersCubit>(
+    () => UsersCubit(),
   );
 }

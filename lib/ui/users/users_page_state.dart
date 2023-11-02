@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:equatable/equatable.dart';
 
-class UsersPageSate extends StatelessWidget {
-  const UsersPageSate({super.key});
-
+abstract class UsersPageSate extends Equatable {
   @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
+  List<Object> get props => [];
 }
+
+class UsersPageSateInitial extends UsersPageSate {}

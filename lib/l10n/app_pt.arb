@@ -1,4 +1,11 @@
 {
   "addEvent":"Add new entre",
-  "voluntiers":"Voluntários"
+  "leaders":"{count, plural, =0{no leaders} =1{1 leader} other{{count} leaders}}",
+  "voluntiers":"{count, plural, =0{voluntier} =1{voluntiers} other{{count} voluntiers}}",
+  "@voluntiers":{
+    "description": "Plural of voluntiers"
+  },
+  "teams":"{count, plural, =0{time} =1{Times} other{{count} times}}",
+  "event":"{count, plural, =0{evento} =1{eventos} other{{count} eventos}}",
+  "users": "{count, plural, =0{usuários} =1{usuário} other{{count} usuários}}"
 }

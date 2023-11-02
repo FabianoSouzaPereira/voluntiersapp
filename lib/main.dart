@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:voluntiersapp/core/router/router_config.dart';
 import 'package:voluntiersapp/l10n/l10n.dart';
 import 'package:voluntiersapp/locator.dart';
 import 'package:voluntiersapp/ui/home/home_cubit.dart';
-import 'package:voluntiersapp/ui/home/home_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:voluntiersapp/ui/home/widgets/card_cubit.dart'; // Importe o provider
+import 'package:voluntiersapp/ui/home/widgets/card_cubit.dart';
+import 'package:voluntiersapp/ui/users/users_cubit.dart';
 
 void main() async {
   await setupLocator();
@@ -25,15 +26,19 @@ class MyApp extends StatelessWidget {
         Provider<CardCubit>(
           create: (_) => getIt<CardCubit>(),
         ),
-        // Outros provedores, se houver
+        Provider<UsersCubit>(
+          create: (_) => getIt<UsersCubit>(),
+        ),
       ],
-      child: MaterialApp(
-        title: 'Flutter Demo',
+      child: MaterialApp.router(
+        title: 'Volunters',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
           useMaterial3: true,
         ),
-        home: const HomePage(title: 'Flutter Demo Home Page'),
+        routerDelegate: router.routerDelegate,
+        routeInformationParser: router.routeInformationParser,
+        routeInformationProvider: router.routeInformationProvider,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: L10n.all,
       ),

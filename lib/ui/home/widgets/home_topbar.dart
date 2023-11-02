@@ -16,8 +16,8 @@ class HomeTopBar extends StatelessWidget {
               Scaffold.of(context).openEndDrawer();
             },
             child: SizedBox(
-              height: 32,
-              child: Container(),
+              height: 62,
+              child: Container(color: Theme.of(context).primaryColorDark),
             ),
           ),
         ],
