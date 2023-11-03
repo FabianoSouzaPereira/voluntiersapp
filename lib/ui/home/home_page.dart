@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:voluntiersapp/ui/widgets/reorderableListWidget.dart';
 import 'package:voluntiersapp/ui/home/widgets/BorderedCardWidget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:voluntiersapp/core/router/paths.dart' as paths;
 
 class HomePage extends StatelessWidget {
@@ -10,15 +11,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = AppLocalizations.of(context)!;
     var viewPaddingTop = MediaQuery.of(context).viewPadding.top;
     return SafeArea(
       top: true,
       child: Scaffold(
         backgroundColor: Colors.black26,
         appBar: AppBar(
-          title: const Text(
-            "Voluntiers",
-            style: TextStyle(
+          title: Text(
+            locale.voluntiers(1)[0].toUpperCase() + locale.voluntiers(1).substring(1).toLowerCase(),
+            style: const TextStyle(
               color: Colors.white,
               backgroundColor: Colors.black,
               fontSize: 20,
@@ -43,6 +45,7 @@ class HomePage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: ReorderableListWidget(
+                      verticalOrientation: true,
                       items: const [
                         BorderedCardWidgets(
                           route: paths.UserPagePath,

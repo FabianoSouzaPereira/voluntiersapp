@@ -10,6 +10,7 @@ import 'package:voluntiersapp/ui/settings/settings_cubit.dart';
 import 'package:voluntiersapp/ui/users/users_cubit.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
   runApp(const MyApp());
 }
