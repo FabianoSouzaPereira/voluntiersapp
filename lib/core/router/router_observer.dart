@@ -4,11 +4,11 @@ class GoRouterObserverGlobal extends NavigatorObserver {
   List<String> routeStack = [];
 
   void _printStack() {
-    debugPrint('--- Navigation Stack ---');
+    // debugPrint('--- Navigation Stack ---');
     for (var i = 0; i < routeStack.length; i++) {
       debugPrint(routeStack[i]);
     }
-    debugPrint('--- /Navigation Stack ---');
+    // debugPrint('--- /Navigation Stack ---');
   }
 
   @override

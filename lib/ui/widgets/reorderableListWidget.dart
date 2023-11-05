@@ -1,19 +1,22 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class ReorderableListWidget extends StatefulWidget {
   final bool verticalOrientation;
   final List<Widget> items;
 
-  ReorderableListWidget({
+  const ReorderableListWidget({
+    Key? key,
     this.verticalOrientation = true,
     required this.items,
-  });
+  }) : super(key: key);
 
   @override
-  _ReorderableListWidgetState createState() => _ReorderableListWidgetState();
+  ReorderableListWidgetState createState() => ReorderableListWidgetState();
 }
 
-class _ReorderableListWidgetState extends State<ReorderableListWidget> {
+class ReorderableListWidgetState extends State<ReorderableListWidget> {
   late bool _verticalOrientation;
   late List<Widget> _reorderedList;
 
@@ -26,7 +29,7 @@ class _ReorderableListWidgetState extends State<ReorderableListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final bool orientation = widget.verticalOrientation;
+    final bool orientation = _verticalOrientation;
     List<Widget> childrenList = [];
 
     if (orientation) {

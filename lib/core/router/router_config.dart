@@ -4,6 +4,7 @@ import 'package:voluntiersapp/core/router/paths.dart' as paths;
 import 'package:voluntiersapp/core/router/router_observer.dart';
 import 'package:voluntiersapp/core/router/routes.dart' as routes;
 import 'package:voluntiersapp/ui/home/home_page.dart';
+import 'package:voluntiersapp/ui/notFound/page_notfound.dart';
 import 'package:voluntiersapp/ui/users/users_page.dart';
 import 'package:voluntiersapp/ui/settings/settings_page.dart';
 
@@ -13,7 +14,19 @@ GoRouter router = GoRouter(
   initialLocation: paths.HomePagePath,
   navigatorKey: navigatorKey,
   observers: [GoRouterObserverGlobal()],
-  redirect: (context, goRouterState) {
+  redirect: (context, state) {
+    final requestedPath = state.fullPath;
+
+    final validRoutes = [
+      paths.HomePagePath,
+      paths.UserPagePath,
+      paths.SettingsPagePath,
+    ];
+
+    if (!validRoutes.contains(requestedPath)) {
+      return paths.NotFound;
+    }
+
     return null;
   },
   routes: [
@@ -34,6 +47,11 @@ GoRouter router = GoRouter(
       path: paths.SettingsPagePath,
       name: routes.SettingsPageRoute,
       builder: (context, state) => const SettingsPage(title: 'Settings'),
+    ),
+    GoRoute(
+      path: paths.NotFound,
+      name: routes.NotFoundPageRoute,
+      builder: (context, state) => const NotFoundPage(),
     ),
   ],
 );

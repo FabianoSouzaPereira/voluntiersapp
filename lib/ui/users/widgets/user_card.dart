@@ -9,16 +9,16 @@ class UserBorderedCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: Colors.transparent,
-      elevation: 5, // Elevação da sombra do card
+      elevation: 5,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0), // Borda arredondada do card
-        side: const BorderSide(color: Colors.blue, width: 2), // Cor e largura da borda
+        borderRadius: BorderRadius.circular(15.0),
+        side: const BorderSide(color: Colors.blue, width: 2),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           const ListTile(
-            leading: Icon(Icons.person), // Ícone à esquerda
+            leading: Icon(Icons.person),
             title: Text(
               'Título do Card',
               style: TextStyle(

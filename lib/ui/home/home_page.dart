@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:voluntiersapp/ui/widgets/reorderableListWidget.dart';
-import 'package:voluntiersapp/ui/home/widgets/BorderedCardWidget.dart';
+import 'package:voluntiersapp/ui/home/widgets/grid_icon.dart';
+import 'package:voluntiersapp/ui/home/widgets/gride_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:voluntiersapp/core/router/paths.dart' as paths;
 
@@ -13,6 +13,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context)!;
     var viewPaddingTop = MediaQuery.of(context).viewPadding.top;
+    final List<CustomIcon> icons = [
+      const CustomIcon(iconData: Icons.home, route: paths.HomePagePath),
+      const CustomIcon(iconData: Icons.favorite, route: 'route'),
+      const CustomIcon(iconData: Icons.settings, route: paths.SettingsPagePath),
+      const CustomIcon(iconData: Icons.notifications, route: 'route'),
+      const CustomIcon(iconData: Icons.person, route: paths.UserPagePath),
+      const CustomIcon(iconData: Icons.email, route: 'route'),
+      const CustomIcon(iconData: Icons.camera, route: 'route'),
+      const CustomIcon(iconData: Icons.movie, route: 'route'),
+    ];
+
     return SafeArea(
       top: true,
       child: Scaffold(
@@ -44,21 +55,7 @@ class HomePage extends StatelessWidget {
                   flex: 1,
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: ReorderableListWidget(
-                      verticalOrientation: true,
-                      items: const [
-                        BorderedCardWidgets(
-                          route: paths.UserPagePath,
-                          title: 'Users',
-                          description: "Description users",
-                        ),
-                        BorderedCardWidgets(
-                          route: paths.SettingsPagePath,
-                          title: 'Setttings',
-                          description: "Description Settings",
-                        ),
-                      ],
-                    ),
+                    child: IconsGrid(icons: icons),
                   ),
                 ),
                 const SizedBox(height: 20),
