@@ -3,4 +3,5 @@
 const NotFoundPageRoute = 'notfound';
 const HomePageRoute = 'home';
 const UsersPageRoute = 'user';
+const UserDescriptions = 'userdescription';
 const SettingsPageRoute = 'settings';

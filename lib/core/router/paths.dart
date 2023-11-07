@@ -3,4 +3,5 @@
 const NotFound = '/notfound';
 const HomePagePath = '/home';
 const UserPagePath = '/users';
+const UserDescriptions = '/users/userdescription';
 const SettingsPagePath = '/settings';

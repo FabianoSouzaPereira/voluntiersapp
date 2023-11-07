@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
 class UserBorderedCard extends StatelessWidget {
-  final Widget child;
+  final Widget childa;
+  final String title;
+  final String description;
 
-  const UserBorderedCard({super.key, required this.child});
+  const UserBorderedCard({
+    super.key,
+    required this.childa,
+    required this.title,
+    required this.description,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +24,11 @@ class UserBorderedCard extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          const ListTile(
+          ListTile(
             leading: Icon(Icons.person),
             title: Text(
-              'Título do Card',
-              style: TextStyle(
+              title,
+              style: const TextStyle(
                 color: Colors.white,
                 backgroundColor: Colors.black,
                 fontSize: 12,
@@ -29,8 +36,8 @@ class UserBorderedCard extends StatelessWidget {
               ),
             ),
             subtitle: Text(
-              'Descrição do card...',
-              style: TextStyle(
+              description,
+              style: const TextStyle(
                 color: Colors.white,
                 backgroundColor: Colors.black,
                 fontSize: 12,

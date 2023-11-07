@@ -6,3 +6,7 @@ abstract class UsersPageState extends Equatable {
 }
 
 class UsersPageStateInitial extends UsersPageState {}
+
+class UsersLoading extends UsersPageState {}
+
+class UsersLoaded extends UsersPageState {}
