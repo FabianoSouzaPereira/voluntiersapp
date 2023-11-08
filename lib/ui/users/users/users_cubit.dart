@@ -3,4 +3,8 @@ import 'package:voluntiersapp/ui/users/users/users_page_state.dart';
 
 class UsersCubit extends Cubit<UsersPageState> {
   UsersCubit() : super(UsersPageStateInitial());
+
+  Future<void> init() async {
+    emit(UsersPageLoaded(listUsers: const []));
+  }
 }

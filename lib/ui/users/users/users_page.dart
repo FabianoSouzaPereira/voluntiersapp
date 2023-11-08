@@ -12,7 +12,7 @@ class UserPage extends StatelessWidget {
 
   UserPage({Key? key, required this.title}) : super(key: key);
 
-  var _cubit = GetIt.instance.get<UsersCubit>();
+  final _cubit = GetIt.instance.get<UsersCubit>()..init();
 
   @override
   Widget build(BuildContext context) {
@@ -62,36 +62,40 @@ class UserPage extends StatelessWidget {
         body: BlocBuilder<UsersCubit, UsersPageState>(
           bloc: _cubit,
           builder: (context, state) {
-            if (state is UsersLoading) {
+            if (state is UsersPageLoading) {
               return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (state is UsersLoaded) {
-              Container(
+            } else if (state is UsersPageLoaded) {
+              return Container(
                 height: double.infinity,
                 width: double.infinity,
                 color: Colors.transparent,
                 child: Container(
                   color: Colors.transparent,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: ReorderableListWidget(
                           items: [
-                            GestureDetector(
-                              child: const Text(
-                                "Descriptions",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  decoration: TextDecoration.underline,
+                            Column(
+                              children: [
+                                GestureDetector(
+                                  child: const Text(
+                                    "Descriptions",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    GoRouter.of(context).go(paths.UserDescriptionsPath);
+                                  },
                                 ),
-                              ),
-                              onTap: () {
-                                GoRouter.of(context).go(paths.UserDescriptions);
-                              },
+                              ],
                             ),
                           ],
                         ),
@@ -101,7 +105,17 @@ class UserPage extends StatelessWidget {
                 ),
               );
             }
-            return const SizedBox.shrink();
+            return Container(
+              padding: const EdgeInsets.all(16.0),
+              child: const Text(
+                "Nada foi adicionado ainda.",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            );
           },
         ),
       ),
