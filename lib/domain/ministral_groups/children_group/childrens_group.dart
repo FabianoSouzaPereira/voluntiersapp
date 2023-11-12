@@ -1,11 +1,11 @@
-class YouthMinistry {
+class ChildrenGroup {
   String id;
   String name;
   List<String> members = [];
 
-  YouthMinistry({required this.id, required this.name, required this.members});
+  ChildrenGroup({required this.id, required this.name, required this.members});
 
-  factory YouthMinistry.fromJson(Map<String, dynamic> json) => YouthMinistry(
+  factory ChildrenGroup.fromJson(Map<String, dynamic> json) => ChildrenGroup(
         id: json["id"],
         name: json["name"],
         members: json["members"],

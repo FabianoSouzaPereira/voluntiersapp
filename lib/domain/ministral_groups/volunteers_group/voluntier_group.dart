@@ -1,17 +1,17 @@
-class Voluntier {
+class VoluntierGroup {
   String id;
   String name;
   String description;
   String type;
 
-  Voluntier({
+  VoluntierGroup({
     required this.id,
     required this.name,
     required this.description,
     required this.type,
   });
 
-  factory Voluntier.fromJson(Map<String, dynamic> json) => Voluntier(
+  factory VoluntierGroup.fromJson(Map<String, dynamic> json) => VoluntierGroup(
         id: json["id"],
         name: json["name"],
         description: json["description"],
