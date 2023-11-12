@@ -1,10 +1,10 @@
-class Pastor {
+class MusicSingers {
   String id;
   String name;
 
-  Pastor({required this.id, required this.name});
+  MusicSingers({required this.id, required this.name});
 
-  factory Pastor.fromJson(Map<String, dynamic> json) => Pastor(
+  factory MusicSingers.fromJson(Map<String, dynamic> json) => MusicSingers(
         id: json["id"],
         name: json["name"],
       );
