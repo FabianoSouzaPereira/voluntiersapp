@@ -3,6 +3,7 @@ class Leader {
   String name;
   String description;
   String type;
+  List ministery = [];
 
   Leader({
     required this.id,
