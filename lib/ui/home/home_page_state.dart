@@ -1,25 +1,28 @@
+import 'package:equatable/equatable.dart';
 import 'package:voluntiersapp/ui/home/widgets/home_card.dart';
 
-abstract class HomeState {
+abstract class HomeState extends Equatable {
   final List<HomeCard> cards;
 
-  HomeState(this.cards);
+  const HomeState(this.cards);
 
-  // Método abstrato que todas as classes filhas devem implementar
+  @override
+  List<Object?> get props => [cards];
+
   HomeState copyWith({required List<HomeCard> cards});
 }
 
 class HomeInitial extends HomeState {
-  HomeInitial() : super(const []);
+  const HomeInitial() : super(const []);
 
   @override
   HomeState copyWith({required List<HomeCard> cards}) {
-    return HomeInitial();
+    return const HomeInitial();
   }
 }
 
 class HomeStateUpdated extends HomeState {
-  HomeStateUpdated(List<HomeCard> cards) : super(cards);
+  const HomeStateUpdated(List<HomeCard> cards) : super(cards);
 
   @override
   HomeState copyWith({required List<HomeCard> cards}) {

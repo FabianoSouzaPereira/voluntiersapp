@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:voluntiersapp/core/router/router_config.dart';
 import 'package:voluntiersapp/l10n/l10n.dart';
 import 'package:voluntiersapp/locator.dart';
@@ -11,6 +12,7 @@ import 'package:voluntiersapp/ui/users/users/users_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await SharedPreferences.getInstance();
   await setupLocator();
   runApp(const MyApp());
 }
