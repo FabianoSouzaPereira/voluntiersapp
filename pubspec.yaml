@@ -40,7 +40,6 @@ dev_dependencies:
   mockito: ^5.3.2
   bloc_test: ^9.1.4
   json_serializable: ^6.7.1
-  shared_preferences: ^2.0.0
   shared_preferences_mock: ^2.0.0
 
 scripts:
