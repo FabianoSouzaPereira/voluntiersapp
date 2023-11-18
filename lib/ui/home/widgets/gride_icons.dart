@@ -26,6 +26,13 @@ class IconsGrid extends StatelessWidget {
             backgroundColor: Colors.black,
             fontSize: 20,
             fontWeight: FontWeight.bold,
+            shadows: [
+              Shadow(
+                color: Color.fromRGBO(88, 88, 83, 1),
+                offset: Offset(1.2, 4.2),
+                blurRadius: 3.0,
+              ),
+            ],
           ),
         ),
         backgroundColor: Colors.black,
@@ -48,10 +55,27 @@ class IconsGrid extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: Center(
-                child: Icon(
-                  icons[index].iconData,
-                  size: 60,
-                  color: icons.elementAt(index).iconColor,
+                child: ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return const LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [Colors.white, Colors.grey],
+                      stops: [0.0, 1.0],
+                    ).createShader(bounds);
+                  },
+                  child: Icon(
+                    icons[index].iconData,
+                    size: 60,
+                    color: icons.elementAt(index).iconColor,
+                    shadows: const [
+                      Shadow(
+                        color: Color.fromRGBO(88, 88, 83, 1),
+                        offset: Offset(1.2, 4.2),
+                        blurRadius: 3.0,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

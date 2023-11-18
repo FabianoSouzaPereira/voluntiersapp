@@ -3,7 +3,6 @@ import 'package:voluntiersapp/ui/home/widgets/grid_icon.dart';
 import 'package:voluntiersapp/ui/home/widgets/gride_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:voluntiersapp/core/router/paths.dart' as paths;
-import 'package:voluntiersapp/ui/theme/app_style.dart';
 
 class HomePage extends StatelessWidget {
   final String title;
