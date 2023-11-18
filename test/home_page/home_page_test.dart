@@ -8,13 +8,11 @@ import 'package:voluntiersapp/ui/home/home_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:voluntiersapp/ui/home/widgets/gride_icons.dart';
 import 'mocks/mock_app_localizations.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   setUp(() async {
     WidgetsFlutterBinding.ensureInitialized();
     await setupLocator();
-    SharedPreferences.setMockInitialValues({});
   });
   testWidgets('HomePage should render correctly', (WidgetTester tester) async {
     await tester.pumpWidget(
@@ -32,7 +30,6 @@ void main() {
           ],
           child: Builder(
             builder: (BuildContext context) {
-              SharedPreferences storage;
               return const HomePage(title: 'Home');
             },
           ),

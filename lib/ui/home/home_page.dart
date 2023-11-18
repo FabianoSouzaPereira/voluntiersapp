@@ -3,6 +3,7 @@ import 'package:voluntiersapp/ui/home/widgets/grid_icon.dart';
 import 'package:voluntiersapp/ui/home/widgets/gride_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:voluntiersapp/core/router/paths.dart' as paths;
+import 'package:voluntiersapp/ui/theme/app_style.dart';
 
 class HomePage extends StatelessWidget {
   final String title;
@@ -14,14 +15,13 @@ class HomePage extends StatelessWidget {
     final locale = AppLocalizations.of(context)!;
     var viewPaddingTop = MediaQuery.of(context).viewPadding.top;
     final List<CustomIcon> icons = [
-      const CustomIcon(iconData: Icons.home, route: paths.HomePagePath),
-      const CustomIcon(iconData: Icons.favorite, route: 'route'),
-      const CustomIcon(iconData: Icons.settings, route: paths.SettingsPagePath),
-      const CustomIcon(iconData: Icons.notifications, route: 'route'),
-      const CustomIcon(iconData: Icons.person, route: paths.UserPagePath),
-      const CustomIcon(iconData: Icons.email, route: 'route'),
-      const CustomIcon(iconData: Icons.camera, route: 'route'),
-      const CustomIcon(iconData: Icons.movie, route: 'route'),
+      const CustomIcon(iconData: Icons.favorite, route: 'route', iconColor: Colors.white),
+      const CustomIcon(iconData: Icons.settings, route: paths.SettingsPagePath, iconColor: Colors.white),
+      const CustomIcon(iconData: Icons.notifications, route: 'route', iconColor: Colors.white),
+      const CustomIcon(iconData: Icons.person, route: paths.UserPagePath, iconColor: Colors.white),
+      const CustomIcon(iconData: Icons.email, route: 'route', iconColor: Colors.white),
+      const CustomIcon(iconData: Icons.camera, route: 'route', iconColor: Colors.white),
+      const CustomIcon(iconData: Icons.movie, route: 'route', iconColor: Colors.white),
     ];
 
     return SafeArea(

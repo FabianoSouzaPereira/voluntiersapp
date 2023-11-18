@@ -51,7 +51,7 @@ class IconsGrid extends StatelessWidget {
                 child: Icon(
                   icons[index].iconData,
                   size: 60,
-                  color: Colors.white,
+                  color: icons.elementAt(index).iconColor,
                 ),
               ),
             ),

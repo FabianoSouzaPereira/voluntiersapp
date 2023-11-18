@@ -25,7 +25,7 @@ class UserBorderedCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           ListTile(
-            leading: Icon(Icons.person),
+            leading: const Icon(Icons.person),
             title: Text(
               title,
               style: const TextStyle(

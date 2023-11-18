@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 class CustomIcon extends StatelessWidget {
   final IconData iconData;
   final String route;
+  final Color? iconColor;
 
-  const CustomIcon({Key? key, required this.iconData, required this.route}) : super(key: key);
+  const CustomIcon({
+    Key? key,
+    required this.iconData,
+    required this.route,
+    required this.iconColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +19,7 @@ class CustomIcon extends StatelessWidget {
         Navigator.pushNamed(context, route);
       },
       child: Card(
-        color: Colors.black,
+        color: Colors.green,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
@@ -21,7 +27,14 @@ class CustomIcon extends StatelessWidget {
           child: Icon(
             iconData,
             size: 30,
-            color: Colors.white,
+            color: iconColor,
+            shadows: const [
+              Shadow(
+                color: Color.fromARGB(255, 155, 255, 255),
+                offset: Offset(1.0, 1.0),
+                blurRadius: 3.0,
+              ),
+            ],
           ),
         ),
       ),
