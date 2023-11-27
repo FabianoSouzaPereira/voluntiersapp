@@ -16,8 +16,16 @@ void main() {
 
   testWidgets('IconsGrid should render correctly', (WidgetTester tester) async {
     final icons = [
-      const CustomIcon(iconData: Icons.home, route: '/home'),
-      const CustomIcon(iconData: Icons.favorite, route: '/favorite'),
+      const CustomIcon(
+        iconData: Icons.home,
+        route: '/home',
+        iconColor: null,
+      ),
+      const CustomIcon(
+        iconData: Icons.favorite,
+        route: '/favorite',
+        iconColor: null,
+      ),
     ];
 
     await tester.pumpWidget(MaterialApp(
@@ -33,8 +41,16 @@ void main() {
   testWidgets('IconsGrid should navigate to correct routes on tap', (WidgetTester tester) async {
     // Cria uma lista de CustomIcon para teste
     final icons = [
-      const CustomIcon(iconData: Icons.home, route: '/home'),
-      const CustomIcon(iconData: Icons.favorite, route: '/favorite'),
+      const CustomIcon(
+        iconData: Icons.home,
+        route: '/home',
+        iconColor: null,
+      ),
+      const CustomIcon(
+        iconData: Icons.favorite,
+        route: '/favorite',
+        iconColor: null,
+      ),
       // Adicione mais ícones conforme necessário
     ];
 

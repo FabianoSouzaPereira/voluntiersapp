@@ -11,6 +11,7 @@ void main() {
           body: CustomIcon(
             iconData: Icons.star,
             route: '/example',
+            iconColor: null,
           ),
         ),
       ),
