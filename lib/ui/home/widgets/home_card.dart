@@ -99,9 +99,9 @@ class HomeCardState extends State<HomeCard> {
                   ),
                 ),
               ),
-              const Text(
-                "",
-                style: TextStyle(
+              Text(
+                widget.title,
+                style: const TextStyle(
                   fontSize: 12.0,
                   fontWeight: FontWeight.bold,
                 ),

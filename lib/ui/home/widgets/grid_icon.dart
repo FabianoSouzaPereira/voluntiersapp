@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
 class CustomIcon extends StatelessWidget {
+  final String name;
   final IconData iconData;
   final String route;
   final Color? iconColor;
+  final String? notification;
 
   const CustomIcon({
     Key? key,
+    required this.name,
     required this.iconData,
     required this.route,
     required this.iconColor,
+    required this.notification,
   }) : super(key: key);
 
   @override

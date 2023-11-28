@@ -14,13 +14,55 @@ class HomePage extends StatelessWidget {
     final locale = AppLocalizations.of(context)!;
     var viewPaddingTop = MediaQuery.of(context).viewPadding.top;
     final List<CustomIcon> icons = [
-      const CustomIcon(iconData: Icons.favorite, route: 'route', iconColor: Colors.white),
-      const CustomIcon(iconData: Icons.settings, route: paths.SettingsPagePath, iconColor: Colors.white),
-      const CustomIcon(iconData: Icons.notifications, route: 'route', iconColor: Colors.white),
-      const CustomIcon(iconData: Icons.person, route: paths.UserPagePath, iconColor: Colors.white),
-      const CustomIcon(iconData: Icons.email, route: 'route', iconColor: Colors.white),
-      const CustomIcon(iconData: Icons.camera, route: 'route', iconColor: Colors.white),
-      const CustomIcon(iconData: Icons.movie, route: 'route', iconColor: Colors.white),
+      const CustomIcon(
+        name: "Favorite",
+        iconData: Icons.favorite,
+        route: 'route',
+        iconColor: Colors.white,
+        notification: "",
+      ),
+      const CustomIcon(
+        name: "Settings",
+        iconData: Icons.settings,
+        route: paths.SettingsPagePath,
+        iconColor: Colors.white,
+        notification: "",
+      ),
+      const CustomIcon(
+        name: "Notifications",
+        iconData: Icons.notifications,
+        route: 'route',
+        iconColor: Colors.white,
+        notification: "",
+      ),
+      const CustomIcon(
+        name: "User",
+        iconData: Icons.person,
+        route: paths.UserPagePath,
+        iconColor: Colors.white,
+        notification: "Update",
+      ),
+      const CustomIcon(
+        name: "Email",
+        iconData: Icons.email,
+        route: 'route',
+        iconColor: Colors.white,
+        notification: "Novo",
+      ),
+      const CustomIcon(
+        name: "Camera",
+        iconData: Icons.camera,
+        route: 'route',
+        iconColor: Colors.white,
+        notification: "",
+      ),
+      const CustomIcon(
+        name: "Video",
+        iconData: Icons.movie,
+        route: 'route',
+        iconColor: Colors.white,
+        notification: "Novo",
+      )
     ];
 
     return SafeArea(
