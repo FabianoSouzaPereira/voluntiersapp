@@ -21,12 +21,13 @@ class _IconsGridState extends State<CardsGrid> {
 
   @override
   Widget build(BuildContext context) {
+    final locale = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text(
-          'Younity Tarefas',
-          style: TextStyle(
+        title: Text(
+          locale.younitytasks(0)[0].toUpperCase() + locale.younitytasks(0).substring(1).toLowerCase(),
+          style: const TextStyle(
             color: Colors.white,
             backgroundColor: Colors.black,
             fontSize: 20,

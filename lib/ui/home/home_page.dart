@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
               backgroundColor: Colors.black26,
               appBar: AppBar(
                 title: Text(
-                  locale.voluntiers(1)[0].toUpperCase() + locale.voluntiers(1).substring(1).toLowerCase(),
+                  locale.voluntiers(0)[0].toUpperCase() + locale.voluntiers(0).substring(1).toLowerCase(),
                   style: const TextStyle(
                     color: Colors.white,
                     backgroundColor: Colors.black,
