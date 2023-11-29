@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:voluntiersapp/ui/home/widgets/grid_icon.dart';
 import 'package:voluntiersapp/ui/home/widgets/home_card.dart';
 
 void main() {
@@ -7,6 +8,13 @@ void main() {
     final card = HomeCard(
       onPressed: () {},
       title: 'Test Card',
+      icon: const CustomIcon(
+        name: "Favorite",
+        iconData: Icons.favorite,
+        route: 'route',
+        iconColor: Colors.white,
+        notification: "",
+      ),
     );
 
     await tester.pumpWidget(MaterialApp(
@@ -24,6 +32,13 @@ void main() {
     final card = HomeCard(
       onPressed: () {},
       title: 'Test Card',
+      icon: const CustomIcon(
+        name: "Favorite",
+        iconData: Icons.favorite,
+        route: 'route',
+        iconColor: Colors.white,
+        notification: "",
+      ),
     );
 
     await tester.pumpWidget(MaterialApp(

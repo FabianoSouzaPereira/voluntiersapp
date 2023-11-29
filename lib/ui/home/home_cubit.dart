@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:voluntiersapp/ui/home/widgets/grid_icon.dart';
 import 'package:voluntiersapp/ui/home/widgets/home_card.dart';
 import 'home_page_state.dart';
-
 import 'package:voluntiersapp/core/router/paths.dart' as paths;
 
 final List<HomeCard> cards = [

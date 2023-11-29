@@ -54,7 +54,7 @@ void main() {
         countWidgetCount++;
       } else if (widget is ElevatedButton) {
         elevatedButtonCount++;
-      } else if (widget is IconsGrid) {
+      } else if (widget is CardsGrid) {
         iconsGridCount++;
       }
     }

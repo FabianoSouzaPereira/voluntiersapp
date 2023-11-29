@@ -6,6 +6,8 @@ import 'package:voluntiersapp/locator.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:voluntiersapp/ui/home/widgets/grid_icon.dart';
 import 'package:voluntiersapp/ui/home/widgets/grid_cards.dart';
+import 'package:voluntiersapp/core/router/paths.dart' as paths;
+import 'package:voluntiersapp/ui/home/widgets/home_card.dart';
 
 /* IconsGrid */
 void main() {
@@ -15,25 +17,33 @@ void main() {
   });
 
   testWidgets('IconsGrid should render correctly', (WidgetTester tester) async {
-    final icons = [
-      const CustomIcon(
-        name: "",
-        iconData: Icons.home,
-        route: '/home',
-        iconColor: null,
-        notification: "",
+    final List<HomeCard> cards = [
+      HomeCard(
+        onPressed: () {},
+        title: "",
+        icon: const CustomIcon(
+          name: "Favorite",
+          iconData: Icons.favorite,
+          route: 'route',
+          iconColor: Colors.white,
+          notification: "",
+        ),
       ),
-      const CustomIcon(
-        name: "",
-        iconData: Icons.favorite,
-        route: '/favorite',
-        iconColor: null,
-        notification: "",
+      HomeCard(
+        onPressed: () {},
+        title: "Settings",
+        icon: const CustomIcon(
+          name: "Settings",
+          iconData: Icons.settings,
+          route: paths.SettingsPagePath,
+          iconColor: Colors.white,
+          notification: "",
+        ),
       ),
     ];
 
     await tester.pumpWidget(MaterialApp(
-      home: CardsGrid(cards: ),
+      home: CardsGrid(cards: cards),
     ));
 
     expect(find.text('Younity Tarefas'), findsOneWidget);
@@ -43,31 +53,41 @@ void main() {
   });
 
   testWidgets('IconsGrid should navigate to correct routes on tap', (WidgetTester tester) async {
-    // Cria uma lista de CustomIcon para teste
-    final icons = [
-      const CustomIcon(
-        iconData: Icons.home,
-        route: '/home',
-        iconColor: null,
+    final List<HomeCard> cards = [
+      HomeCard(
+        onPressed: () {},
+        title: "",
+        icon: const CustomIcon(
+          name: "Favorite",
+          iconData: Icons.favorite,
+          route: 'route',
+          iconColor: Colors.white,
+          notification: "",
+        ),
       ),
-      const CustomIcon(
-        iconData: Icons.favorite,
-        route: '/favorite',
-        iconColor: null,
+      HomeCard(
+        onPressed: () {},
+        title: "Settings",
+        icon: const CustomIcon(
+          name: "Settings",
+          iconData: Icons.settings,
+          route: paths.SettingsPagePath,
+          iconColor: Colors.white,
+          notification: "",
+        ),
       ),
-      // Adicione mais ícones conforme necessário
     ];
 
     MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: L10n.all,
       home: Scaffold(
-        body: IconsGrid(icons: icons),
+        body: CardsGrid(cards: cards),
       ),
     );
 
     await tester.pumpWidget(MaterialApp(
-      home: IconsGrid(icons: icons),
+      home: CardsGrid(cards: cards),
     ));
 
     // Toca no primeiro ícone

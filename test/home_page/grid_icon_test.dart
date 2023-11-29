@@ -9,9 +9,11 @@ void main() {
       const MaterialApp(
         home: Scaffold(
           body: CustomIcon(
+            name: "Exemple",
             iconData: Icons.star,
             route: '/example',
             iconColor: null,
+            notification: "",
           ),
         ),
       ),
