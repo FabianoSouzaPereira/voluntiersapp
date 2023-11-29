@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:voluntiersapp/ui/home/widgets/grid_icon.dart';
 
 class HomeCard extends StatefulWidget {

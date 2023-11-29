@@ -32,7 +32,10 @@ class HomeContent extends StatelessWidget {
             body: ListView.builder(
               itemCount: cubit.state.cards.length,
               itemBuilder: (ctx, index) {
-                return Container(color: Theme.of(context).cardColor, child: CardsGrid(cards: cards));
+                return Container(
+                  color: Theme.of(context).cardColor,
+                  child: CardsGrid(cards: cards),
+                );
               },
             ),
           ),

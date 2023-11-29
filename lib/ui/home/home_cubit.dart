@@ -9,7 +9,7 @@ import 'package:voluntiersapp/core/router/paths.dart' as paths;
 final List<HomeCard> cards = [
   HomeCard(
     onPressed: () {},
-    title: "",
+    title: "Favorities",
     icon: const CustomIcon(
       name: "Favorite",
       iconData: Icons.favorite,
@@ -48,7 +48,7 @@ final List<HomeCard> cards = [
       iconData: Icons.person,
       route: paths.UserPagePath,
       iconColor: Colors.white,
-      notification: "Update",
+      notification: "",
     ),
   ),
   HomeCard(
@@ -59,7 +59,7 @@ final List<HomeCard> cards = [
       iconData: Icons.email,
       route: 'route',
       iconColor: Colors.white,
-      notification: "Novo",
+      notification: "",
     ),
   ),
   HomeCard(
@@ -81,7 +81,7 @@ final List<HomeCard> cards = [
       iconData: Icons.movie,
       route: 'route',
       iconColor: Colors.white,
-      notification: "Novo",
+      notification: "",
     ),
   ),
 ];
