@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:voluntiersapp/ui/home/widgets/grid_icon.dart';
 
 class HomeCard extends StatefulWidget {
   final Function() onPressed;
   final String title;
+  final CustomIcon icon;
   final double initialX;
   final double initialY;
 
@@ -10,6 +12,7 @@ class HomeCard extends StatefulWidget {
     Key? key,
     required this.onPressed,
     required this.title,
+    required this.icon,
     this.initialX = 0,
     this.initialY = 0,
   }) : super(key: key);

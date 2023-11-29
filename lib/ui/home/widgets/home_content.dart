@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:voluntiersapp/ui/home/home_cubit.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:voluntiersapp/ui/home/widgets/home_card.dart';
+import 'package:voluntiersapp/ui/home/widgets/grid_cards.dart';
 
 class HomeContent extends StatelessWidget {
   const HomeContent({Key? key}) : super(key: key);
@@ -11,6 +11,7 @@ class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cubit = GetIt.instance<HomeCubit>();
+    var cards = cubit.state.cards;
 
     final locale = AppLocalizations.of(context)!;
     return BlocProvider<HomeCubit>(
@@ -31,7 +32,7 @@ class HomeContent extends StatelessWidget {
             body: ListView.builder(
               itemCount: cubit.state.cards.length,
               itemBuilder: (ctx, index) {
-                return Container(color: Theme.of(context).cardColor, child: HomeCard(onPressed: () {}, title: "Card"));
+                return Container(color: Theme.of(context).cardColor, child: CardsGrid(cards: cards));
               },
             ),
           ),

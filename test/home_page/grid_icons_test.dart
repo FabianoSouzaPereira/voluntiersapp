@@ -5,7 +5,7 @@ import 'package:voluntiersapp/l10n/l10n.dart';
 import 'package:voluntiersapp/locator.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:voluntiersapp/ui/home/widgets/grid_icon.dart';
-import 'package:voluntiersapp/ui/home/widgets/gride_icons.dart';
+import 'package:voluntiersapp/ui/home/widgets/grid_cards.dart';
 
 /* IconsGrid */
 void main() {
@@ -17,19 +17,23 @@ void main() {
   testWidgets('IconsGrid should render correctly', (WidgetTester tester) async {
     final icons = [
       const CustomIcon(
+        name: "",
         iconData: Icons.home,
         route: '/home',
         iconColor: null,
+        notification: "",
       ),
       const CustomIcon(
+        name: "",
         iconData: Icons.favorite,
         route: '/favorite',
         iconColor: null,
+        notification: "",
       ),
     ];
 
     await tester.pumpWidget(MaterialApp(
-      home: IconsGrid(icons: icons),
+      home: CardsGrid(cards: ),
     ));
 
     expect(find.text('Younity Tarefas'), findsOneWidget);

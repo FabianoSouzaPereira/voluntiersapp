@@ -6,7 +6,7 @@ import 'package:voluntiersapp/locator.dart';
 import 'package:voluntiersapp/ui/home/home_cubit.dart';
 import 'package:voluntiersapp/ui/home/home_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:voluntiersapp/ui/home/widgets/gride_icons.dart';
+import 'package:voluntiersapp/ui/home/widgets/grid_cards.dart';
 import 'mocks/mock_app_localizations.dart';
 
 void main() {

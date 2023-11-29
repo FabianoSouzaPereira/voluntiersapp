@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:voluntiersapp/ui/home/widgets/grid_icon.dart';
+import 'package:voluntiersapp/ui/home/widgets/home_card.dart';
 import 'package:voluntiersapp/ui/home/widgets/notification_icon.dart';
 
-class IconsGrid extends StatefulWidget {
-  final List<CustomIcon> icons;
-  final String? title;
-  final String? description;
+class CardsGrid extends StatefulWidget {
+  final List<HomeCard> cards;
 
-  const IconsGrid({
+  const CardsGrid({
     Key? key,
-    required this.icons,
-    this.title,
-    this.description,
+    required this.cards,
   }) : super(key: key);
 
   @override
   _IconsGridState createState() => _IconsGridState();
 }
 
-class _IconsGridState extends State<IconsGrid> {
+class _IconsGridState extends State<CardsGrid> {
   bool isNotificationWidgetLoaded = false;
 
   @override
@@ -51,13 +47,13 @@ class _IconsGridState extends State<IconsGrid> {
           crossAxisSpacing: 8.0,
           mainAxisSpacing: 8.0,
         ),
-        itemCount: widget.icons.length,
+        itemCount: widget.cards.length,
         itemBuilder: (context, index) {
-          var notification = widget.icons.elementAt(index).notification;
-          var color = widget.icons.elementAt(index).iconColor;
+          var notification = widget.cards.elementAt(index).icon.notification;
+          var color = widget.cards.elementAt(index).icon.iconColor;
           return GestureDetector(
             onTap: () {
-              GoRouter.of(context).go(widget.icons[index].route);
+              GoRouter.of(context).go(widget.cards[index].icon.route);
             },
             child: Card(
               color: Colors.black,
@@ -90,7 +86,7 @@ class _IconsGridState extends State<IconsGrid> {
                       child: Column(
                         children: [
                           Icon(
-                            widget.icons[index].iconData,
+                            widget.cards[index].icon.iconData,
                             size: 60,
                             color: color,
                             shadows: const [
@@ -102,7 +98,7 @@ class _IconsGridState extends State<IconsGrid> {
                             ],
                           ),
                           Text(
-                            widget.icons.elementAt(index).name,
+                            widget.cards.elementAt(index).title,
                             style: const TextStyle(
                               color: Colors.white,
                               backgroundColor: Colors.black,

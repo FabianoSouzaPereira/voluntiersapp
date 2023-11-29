@@ -13,11 +13,11 @@ abstract class HomeState extends Equatable {
 }
 
 class HomeInitial extends HomeState {
-  const HomeInitial() : super(const []);
+  const HomeInitial(List<HomeCard> cards) : super(cards);
 
   @override
   HomeState copyWith({required List<HomeCard> cards}) {
-    return const HomeInitial();
+    return HomeInitial([...cards]);
   }
 }
 
