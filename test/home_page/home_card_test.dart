@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:voluntiersapp/ui/home/widgets/grid_icon.dart';
-import 'package:voluntiersapp/ui/home/widgets/home_card.dart';
+import 'package:voluntiersapp/presentation/home/widgets/grid_icon.dart';
+import 'package:voluntiersapp/presentation/home/widgets/home_card.dart';
 
 void main() {
   testWidgets('HomeCard should render correctly', (WidgetTester tester) async {

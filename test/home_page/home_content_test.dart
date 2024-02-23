@@ -4,10 +4,10 @@ import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 import 'package:voluntiersapp/l10n/l10n.dart';
 import 'package:voluntiersapp/locator.dart';
-import 'package:voluntiersapp/ui/home/home_cubit.dart';
-import 'package:voluntiersapp/ui/home/widgets/home_card.dart';
+import 'package:voluntiersapp/presentation/home/home_cubit.dart';
+import 'package:voluntiersapp/presentation/home/widgets/home_card.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:voluntiersapp/ui/home/widgets/home_content.dart';
+import 'package:voluntiersapp/presentation/home/widgets/home_content.dart';
 
 import 'mocks/mock_app_localizations.dart';
 import 'mocks/home_cubit.mocks.dart';

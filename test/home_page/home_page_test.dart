@@ -3,10 +3,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:voluntiersapp/l10n/l10n.dart';
 import 'package:voluntiersapp/locator.dart';
-import 'package:voluntiersapp/ui/home/home_cubit.dart';
-import 'package:voluntiersapp/ui/home/home_page.dart';
+import 'package:voluntiersapp/presentation/home/home_cubit.dart';
+import 'package:voluntiersapp/presentation/home/home_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:voluntiersapp/ui/home/widgets/grid_cards.dart';
+import 'package:voluntiersapp/presentation/home/widgets/grid_cards.dart';
 import 'mocks/mock_app_localizations.dart';
 
 void main() {

@@ -3,13 +3,13 @@ import 'package:go_router/go_router.dart';
 import 'package:voluntiersapp/core/router/paths.dart' as paths;
 import 'package:voluntiersapp/core/router/router_observer.dart';
 import 'package:voluntiersapp/core/router/routes.dart' as routes;
-import 'package:voluntiersapp/ui/events/Events_page.dart';
-import 'package:voluntiersapp/ui/home/home_page.dart';
-import 'package:voluntiersapp/ui/leaders/leaders_page.dart';
-import 'package:voluntiersapp/ui/notFound/page_notfound.dart';
-import 'package:voluntiersapp/ui/teams/teams_page.dart';
-import 'package:voluntiersapp/ui/users/users/users_page.dart';
-import 'package:voluntiersapp/ui/settings/settings_page.dart';
+import 'package:voluntiersapp/presentation/events/Events_page.dart';
+import 'package:voluntiersapp/presentation/home/home_page.dart';
+import 'package:voluntiersapp/presentation/leaders/leaders_page.dart';
+import 'package:voluntiersapp/presentation/notFound/page_notfound.dart';
+import 'package:voluntiersapp/presentation/teams/teams_page.dart';
+import 'package:voluntiersapp/presentation/users/users/users_page.dart';
+import 'package:voluntiersapp/presentation/settings/settings_page.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
-import 'package:voluntiersapp/ui/home/home_cubit.dart';
-import 'package:voluntiersapp/ui/home/widgets/grid_icon.dart';
-import 'package:voluntiersapp/ui/home/widgets/home_card.dart';
+import 'package:voluntiersapp/presentation/home/home_cubit.dart';
+import 'package:voluntiersapp/presentation/home/widgets/grid_icon.dart';
+import 'package:voluntiersapp/presentation/home/widgets/home_card.dart';
 
 @GenerateMocks([HomeCubit])
 void main() {
