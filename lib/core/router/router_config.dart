@@ -3,10 +3,13 @@ import 'package:go_router/go_router.dart';
 import 'package:voluntiersapp/core/router/paths.dart' as paths;
 import 'package:voluntiersapp/core/router/router_observer.dart';
 import 'package:voluntiersapp/core/router/routes.dart' as routes;
-import 'package:voluntiersapp/ui/home/home_page.dart';
-import 'package:voluntiersapp/ui/notFound/page_notfound.dart';
-import 'package:voluntiersapp/ui/users/users_page.dart';
-import 'package:voluntiersapp/ui/settings/settings_page.dart';
+import 'package:voluntiersapp/presentation/events/Events_page.dart';
+import 'package:voluntiersapp/presentation/home/home_page.dart';
+import 'package:voluntiersapp/presentation/leaders/leaders_page.dart';
+import 'package:voluntiersapp/presentation/notFound/page_notfound.dart';
+import 'package:voluntiersapp/presentation/teams/teams_page.dart';
+import 'package:voluntiersapp/presentation/users/users/users_page.dart';
+import 'package:voluntiersapp/presentation/settings/settings_page.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -20,11 +23,15 @@ GoRouter router = GoRouter(
     final validRoutes = [
       paths.HomePagePath,
       paths.UserPagePath,
+      paths.UserDescriptionsPath,
       paths.SettingsPagePath,
+      paths.LeadersPagePath,
+      paths.TeamsPagePath,
+      paths.EventsPagePath,
     ];
 
     if (!validRoutes.contains(requestedPath)) {
-      return paths.NotFound;
+      return paths.NotFoundPath;
     }
 
     return null;
@@ -41,7 +48,12 @@ GoRouter router = GoRouter(
     GoRoute(
       path: paths.UserPagePath,
       name: routes.UsersPageRoute,
-      builder: (context, state) => const UserPage(title: 'User'),
+      builder: (context, state) => UserPage(title: 'User'),
+    ),
+    GoRoute(
+      path: paths.UserDescriptionsPath,
+      name: routes.UserDescriptions,
+      builder: (context, state) => UserPage(title: 'User Descriptions'),
     ),
     GoRoute(
       path: paths.SettingsPagePath,
@@ -49,7 +61,22 @@ GoRouter router = GoRouter(
       builder: (context, state) => const SettingsPage(title: 'Settings'),
     ),
     GoRoute(
-      path: paths.NotFound,
+      path: paths.LeadersPagePath,
+      name: routes.LeadersPageRoute,
+      builder: (context, state) => const LeadersPage(title: 'Leaders'),
+    ),
+    GoRoute(
+      path: paths.TeamsPagePath,
+      name: routes.TeamsPageRoute,
+      builder: (context, state) => const TeamsPage(title: 'Teams'),
+    ),
+    GoRoute(
+      path: paths.EventsPagePath,
+      name: routes.EventsPageRoute,
+      builder: (context, state) => const EventsPage(title: 'Events'),
+    ),
+    GoRoute(
+      path: paths.NotFoundPath,
       name: routes.NotFoundPageRoute,
       builder: (context, state) => const NotFoundPage(),
     ),
