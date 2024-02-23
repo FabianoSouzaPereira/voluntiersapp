@@ -1,10 +1,10 @@
-class MusicSingers {
+class MusicSingersModel {
   String id;
   String name;
 
-  MusicSingers({required this.id, required this.name});
+  MusicSingersModel({required this.id, required this.name});
 
-  factory MusicSingers.fromJson(Map<String, dynamic> json) => MusicSingers(
+  factory MusicSingersModel.fromJson(Map<String, dynamic> json) => MusicSingersModel(
         id: json["id"],
         name: json["name"],
       );

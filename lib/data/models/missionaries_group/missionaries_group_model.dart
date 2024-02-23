@@ -1,11 +1,11 @@
-class ChildrenGroup {
+class MissionariesGroupModel {
   String id;
   String name;
   List<String> members = [];
 
-  ChildrenGroup({required this.id, required this.name, required this.members});
+  MissionariesGroupModel({required this.id, required this.name, required this.members});
 
-  factory ChildrenGroup.fromJson(Map<String, dynamic> json) => ChildrenGroup(
+  factory MissionariesGroupModel.fromJson(Map<String, dynamic> json) => MissionariesGroupModel(
         id: json["id"],
         name: json["name"],
         members: json["members"],

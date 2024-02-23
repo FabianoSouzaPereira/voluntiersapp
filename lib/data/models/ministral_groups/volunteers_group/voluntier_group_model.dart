@@ -1,17 +1,17 @@
-class VoluntierGroup {
+class VoluntierGroupModel {
   String id;
   String name;
   String description;
   String type;
 
-  VoluntierGroup({
+  VoluntierGroupModel({
     required this.id,
     required this.name,
     required this.description,
     required this.type,
   });
 
-  factory VoluntierGroup.fromJson(Map<String, dynamic> json) => VoluntierGroup(
+  factory VoluntierGroupModel.fromJson(Map<String, dynamic> json) => VoluntierGroupModel(
         id: json["id"],
         name: json["name"],
         description: json["description"],

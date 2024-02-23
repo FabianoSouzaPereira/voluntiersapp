@@ -1,11 +1,11 @@
-class TeensGroup {
+class MenGroupModel {
   String id;
   String name;
   List<String> members = [];
 
-  TeensGroup({required this.id, required this.name, required this.members});
+  MenGroupModel({required this.id, required this.name, required this.members});
 
-  factory TeensGroup.fromJson(Map<String, dynamic> json) => TeensGroup(
+  factory MenGroupModel.fromJson(Map<String, dynamic> json) => MenGroupModel(
         id: json["id"],
         name: json["name"],
         members: json["members"],
