@@ -1,11 +1,11 @@
-class EventsGroup {
+class BibleSchoolTeachersModel {
   String id;
   String name;
   List<String> members = [];
 
-  EventsGroup({required this.id, required this.name, required this.members});
+  BibleSchoolTeachersModel({required this.id, required this.name, required this.members});
 
-  factory EventsGroup.fromJson(Map<String, dynamic> json) => EventsGroup(
+  factory BibleSchoolTeachersModel.fromJson(Map<String, dynamic> json) => BibleSchoolTeachersModel(
         id: json["id"],
         name: json["name"],
         members: json["members"],

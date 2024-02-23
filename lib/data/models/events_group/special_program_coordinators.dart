@@ -1,11 +1,11 @@
-class SpecialProgramsCoordenators {
+class SpecialProgramsCoordenatorsModel {
   String id;
   String name;
   List<String> members = [];
 
-  SpecialProgramsCoordenators({required this.id, required this.name, required this.members});
+  SpecialProgramsCoordenatorsModel({required this.id, required this.name, required this.members});
 
-  factory SpecialProgramsCoordenators.fromJson(Map<String, dynamic> json) => SpecialProgramsCoordenators(
+  factory SpecialProgramsCoordenatorsModel.fromJson(Map<String, dynamic> json) => SpecialProgramsCoordenatorsModel(
         id: json["id"],
         name: json["name"],
         members: json["members"],

@@ -1,5 +1,5 @@
 import 'package:voluntiersapp/data/models/ecclesiastical_model.dart';
-import 'package:voluntiersapp/data/models/residency/address/address.dart';
+import 'package:voluntiersapp/data/models/residency/address_model.dart';
 
 class ShapherdModel {
   final String id;
@@ -7,7 +7,7 @@ class ShapherdModel {
   final String lastname;
   final String age;
   final String gender;
-  final Ecclesiastical ecclesiastical;
+  final EcclesiasticalModel ecclesiastical;
   final Address address;
 
   ShapherdModel({

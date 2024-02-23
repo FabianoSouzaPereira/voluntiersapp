@@ -1,11 +1,11 @@
-class BibleSchoolTeachers {
+class AdmininstrativeTeamModel {
   String id;
   String name;
   List<String> members = [];
 
-  BibleSchoolTeachers({required this.id, required this.name, required this.members});
+  AdmininstrativeTeamModel({required this.id, required this.name, required this.members});
 
-  factory BibleSchoolTeachers.fromJson(Map<String, dynamic> json) => BibleSchoolTeachers(
+  factory AdmininstrativeTeamModel.fromJson(Map<String, dynamic> json) => AdmininstrativeTeamModel(
         id: json["id"],
         name: json["name"],
         members: json["members"],

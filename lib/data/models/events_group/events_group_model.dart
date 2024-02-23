@@ -1,11 +1,11 @@
-class AdmininstrativeTeam {
+class EventsGroupModel {
   String id;
   String name;
   List<String> members = [];
 
-  AdmininstrativeTeam({required this.id, required this.name, required this.members});
+  EventsGroupModel({required this.id, required this.name, required this.members});
 
-  factory AdmininstrativeTeam.fromJson(Map<String, dynamic> json) => AdmininstrativeTeam(
+  factory EventsGroupModel.fromJson(Map<String, dynamic> json) => EventsGroupModel(
         id: json["id"],
         name: json["name"],
         members: json["members"],

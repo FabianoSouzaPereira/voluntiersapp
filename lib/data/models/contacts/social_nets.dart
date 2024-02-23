@@ -1,4 +1,4 @@
-class SocialNets {
+class SocialNetsModel {
   String? facebook;
   String? twitter;
   String? instagram;
@@ -30,7 +30,7 @@ class SocialNets {
 
   Map<String, String>? outrasRedes;
 
-  SocialNets({
+  SocialNetsModel({
     this.facebook,
     this.twitter,
     this.instagram,
@@ -62,7 +62,7 @@ class SocialNets {
     this.outrasRedes,
   });
 
-  factory SocialNets.fromJson(Map<String, dynamic> json) => SocialNets(
+  factory SocialNetsModel.fromJson(Map<String, dynamic> json) => SocialNetsModel(
         facebook: json["facebook"],
         twitter: json["twitter"],
         instagram: json["instagram"],

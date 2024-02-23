@@ -1,11 +1,11 @@
-class ChurchSecretaries {
+class ChurchSecretariesModel {
   String id;
   String name;
   List<String> members = [];
 
-  ChurchSecretaries({required this.id, required this.name, required this.members});
+  ChurchSecretariesModel({required this.id, required this.name, required this.members});
 
-  factory ChurchSecretaries.fromJson(Map<String, dynamic> json) => ChurchSecretaries(
+  factory ChurchSecretariesModel.fromJson(Map<String, dynamic> json) => ChurchSecretariesModel(
         id: json["id"],
         name: json["name"],
         members: json["members"],

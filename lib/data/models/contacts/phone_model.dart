@@ -1,9 +1,9 @@
-class Phone {
+class PhoneModel {
   String countrynumber;
   String area;
   String number;
 
-  Phone({
+  PhoneModel({
     required this.countrynumber,
     required this.area,
     required this.number,
