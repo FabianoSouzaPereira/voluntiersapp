@@ -4,7 +4,7 @@ class MinisterModel {
 
   MinisterModel({required this.id, required this.name});
 
-  factory MinisterModel.fromJson(Map<String, dynamic> json) => Minister(
+  factory MinisterModel.fromJson(Map<String, dynamic> json) => MinisterModel(
         id: json["id"],
         name: json["name"],
       );

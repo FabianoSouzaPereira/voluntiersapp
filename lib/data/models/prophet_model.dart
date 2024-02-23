@@ -5,7 +5,7 @@ class ProphetModel {
 
   ProphetModel({required this.id, required this.name});
 
-  factory ProphetModel.fromJson(Map<String, dynamic> json) => Prophet(
+  factory ProphetModel.fromJson(Map<String, dynamic> json) => ProphetModel(
         id: json["id"],
         name: json["name"],
       );

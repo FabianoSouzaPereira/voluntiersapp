@@ -13,7 +13,7 @@ class TeamModel {
     required this.leader,
   });
 
-  factory TeamModel.fromJson(Map<String, dynamic> json) => Team(
+  factory TeamModel.fromJson(Map<String, dynamic> json) => TeamModel(
         id: json["id"],
         name: json["name"],
         description: json["description"],

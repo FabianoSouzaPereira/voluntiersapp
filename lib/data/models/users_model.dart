@@ -13,7 +13,7 @@ class UserModel {
     required this.type,
   });
 
-  factory UserModel.fromJson(Map<String, dynamic> json) => User(
+  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         id: json["id"],
         name: json["name"],
         description: json["description"],

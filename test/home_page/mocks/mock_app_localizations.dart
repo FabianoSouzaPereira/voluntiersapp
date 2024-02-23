@@ -68,4 +68,46 @@ class MockAppLocalizations extends AppLocalizations {
     );
     return temp0;
   }
+  
+  @override
+  String cameras(num count) {
+    // TODO: implement cameras
+    throw UnimplementedError();
+  }
+  
+  @override
+  String emails(num count) {
+    // TODO: implement emails
+    throw UnimplementedError();
+  }
+  
+  @override
+  String favorities(num count) {
+    // TODO: implement favorities
+    throw UnimplementedError();
+  }
+  
+  @override
+  String notifications(num count) {
+    // TODO: implement notifications
+    throw UnimplementedError();
+  }
+  
+  @override
+  String settings(num count) {
+    // TODO: implement settings
+    throw UnimplementedError();
+  }
+  
+  @override
+  String videos(num count) {
+    // TODO: implement videos
+    throw UnimplementedError();
+  }
+  
+  @override
+  String younitytasks(num count) {
+    // TODO: implement younitytasks
+    throw UnimplementedError();
+  }
 }

@@ -4,7 +4,7 @@ class ApostleModel {
 
   ApostleModel({required this.id, required this.name});
 
-  factory ApostleModel.fromJson(Map<String, dynamic> json) => Apostle(
+  factory ApostleModel.fromJson(Map<String, dynamic> json) => ApostleModel(
         id: json["id"],
         name: json["name"],
       );

@@ -4,7 +4,7 @@ class DeaconsModel {
 
   DeaconsModel({required this.id, required this.name});
 
-  factory DeaconsModel.fromJson(Map<String, dynamic> json) => Deacons(
+  factory DeaconsModel.fromJson(Map<String, dynamic> json) => DeaconsModel(
         id: json["id"],
         name: json["name"],
       );

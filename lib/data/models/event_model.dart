@@ -11,7 +11,7 @@ class EventModel {
     required this.type,
   });
 
-  factory EventModel.fromJson(Map<String, dynamic> json) => Event(
+  factory EventModel.fromJson(Map<String, dynamic> json) => EventModel(
         id: json["id"],
         name: json["name"],
         description: json["description"],

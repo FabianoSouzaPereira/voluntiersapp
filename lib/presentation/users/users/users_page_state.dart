@@ -11,7 +11,7 @@ class UsersPageStateInitial extends UsersPageState {}
 class UsersPageLoading extends UsersPageState {}
 
 class UsersPageLoaded extends UsersPageState {
-  final List<User> listUsers;
+  final List<UserModel> listUsers;
   UsersPageLoaded({
     required this.listUsers,
   });

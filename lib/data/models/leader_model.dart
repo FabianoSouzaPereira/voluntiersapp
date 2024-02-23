@@ -12,7 +12,7 @@ class LeaderModel {
     required this.type,
   });
 
-  factory LeaderModel.fromJson(Map<String, dynamic> json) => Leader(
+  factory LeaderModel.fromJson(Map<String, dynamic> json) => LeaderModel(
         id: json["id"],
         name: json["name"],
         description: json["description"],

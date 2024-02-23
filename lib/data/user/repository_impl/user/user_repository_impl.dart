@@ -8,7 +8,7 @@ class UserRepository extends AbstractUserRepository {
   UserRepository(AbstractHttpClient httpClient) : super(httpClient);
 
   @override
-  Future<ResponseData<User>> getUser() {
+  Future<ResponseData<UserModel>> getUser() {
     // TODO: implement getUser
     throw UnimplementedError();
   }

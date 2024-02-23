@@ -20,7 +20,7 @@ class ShapherdModel {
     required this.address,
   });
 
-  factory ShapherdModel.fromJson(Map<String, dynamic> json) => Shapherd(
+  factory ShapherdModel.fromJson(Map<String, dynamic> json) => ShapherdModel(
         id: json["id"],
         name: json["name"],
         lastname: json['lastname'],
