@@ -1,3 +1,3 @@
-class AuthenticationUseCase extends BaseUseCase<AuthenticatoinRepository> {
+class AuthenticationUseCase {
   
 }
