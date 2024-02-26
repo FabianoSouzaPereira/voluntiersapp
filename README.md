@@ -1,39 +1,24 @@
 # voluntiersapp
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-## Mock
-
-- comando que gera as classes de mock pelo mokito -> % dart run build_runner build
+O projeto é uma solução que visa criar uma ferramenta para gerenciar a escala de trabalho voluntário em uma instituição. A enfase, a principio, será para umaa primeira unidade da Younity Church, sediada em Florianópolis, Brasil.
 
 ## Architecture
 
 A estrutura apresentada na imagem é uma representação de arquitetura de software, que parece ser uma variação da arquitetura Clean ou Hexagonal, onde a separação de responsabilidades é clara entre a interface do usuário (UI), a lógica de negócios (domínio) e as fontes de dados (dados).
 
+![Project Arquiteture](arquiteture.png)
+
 Para implementar uma estrutura em Flutter seguindo o diagrama e utilizando Cubit para gerenciamento de estado e GetIt para injeção de dependência, você pode estruturar seu projeto da seguinte maneira:
 
-## presentation
+## Presentation
 
 Esta camada contém tudo relacionado à UI (Widgets) e aos detentores da lógica de apresentação (Presentation Logic Holders), que poderiam ser Cubits em nosso caso.
 
-## domain
+## Domain
 
 Aqui, você define seus Use Cases e Entities. Use Cases são operações ou funções que representam todas as possíveis ações do usuário.
 
-## data
+## Data
 
 Esta camada contém os Repositories que servem como ponte entre a lógica de negócios e a fonte de dados, e os Models que são as representações de dados usadas tanto no domínio quanto nas fontes de dados.
 
