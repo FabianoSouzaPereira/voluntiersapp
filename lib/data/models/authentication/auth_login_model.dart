@@ -1,5 +1,4 @@
 import 'dart:ffi';
-
 import 'package:voluntiersapp/domain/entities/auth_login_entity.dart';
 
 class AuthLoginModel {
@@ -12,10 +11,11 @@ class AuthLoginModel {
     required this.password, 
     required this.returnSecureToken
   });
+
+  static fromJson(data) {}
 }
 
 /* Adding the ability to convert to UserEntity to UserModel */
-
 extension AuthLoginModelX on AuthLoginModel {
   AuthLoginEntity toEntity() {
     return AuthLoginEntity(

@@ -29,7 +29,6 @@ class UserModel {
 }
 
 /* Adding the ability to convert to UserEntity to UserModel */
-
 extension UserModelX on UserModel {
   UserEntity toEntity() {
     return UserEntity(

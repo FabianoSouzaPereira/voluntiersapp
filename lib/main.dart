@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:voluntiersapp/core/router/router_config.dart';
+import 'package:voluntiersapp/core/utils/apiconfig.dart';
 import 'package:voluntiersapp/l10n/l10n.dart';
 import 'package:voluntiersapp/locator.dart';
+import 'package:voluntiersapp/presentation/auth/auth_cubit.dart';
 import 'package:voluntiersapp/presentation/home/home_cubit.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -13,17 +15,22 @@ import 'package:voluntiersapp/presentation/users/users/users_cubit.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPreferences.getInstance();
+  ApiConfig apiConfig = await ApiConfig.load();
   await setupLocator();
-  runApp(const MyApp());
+  runApp(MyApp(apiConfig: apiConfig));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final ApiConfig apiConfig;
+  const MyApp({super.key, required this.apiConfig});
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        Provider<AuthCubit>(
+          create: (_) => getIt<AuthCubit>(),
+        ),
         Provider<HomeCubit>(
           create: (_) => getIt<HomeCubit>(),
         ),

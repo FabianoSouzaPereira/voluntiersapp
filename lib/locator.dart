@@ -2,7 +2,9 @@ import 'dart:io';
 
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:voluntiersapp/data/user/repository_impl/user/user_repository_impl.dart';
+import 'package:voluntiersapp/data/auth/auth_repository_impl.dart';
+import 'package:voluntiersapp/data/user/user_repository_impl.dart';
+import 'package:voluntiersapp/presentation/auth/auth_cubit.dart';
 import 'package:voluntiersapp/presentation/home/home_cubit.dart';
 import 'package:voluntiersapp/presentation/home/widgets/card_cubit.dart';
 import 'package:voluntiersapp/presentation/settings/settings_cubit.dart';
@@ -24,13 +26,21 @@ Future<void> setupLocator() async {
 // Repositories
 getIt.registerFactory<HttpClient>(() => HttpClient());
 
-getIt.registerFactory<UserRepository>(
-  () => UserRepository(getIt.get()),
+getIt.registerFactory<UserRepositoryImpl>(
+  () => UserRepositoryImpl(getIt.get()),
+);
+
+getIt.registerFactory<AuthRepositoryImpl>(
+  () => AuthRepositoryImpl(getIt.get()),
 );
 
 // Services
 
 // cubits
+
+  getIt.registerFactory<AuthCubit>(
+    () => AuthCubit(getIt.get()),
+  );
 
   getIt.registerFactory<HomeCubit>(
     () => HomeCubit(),

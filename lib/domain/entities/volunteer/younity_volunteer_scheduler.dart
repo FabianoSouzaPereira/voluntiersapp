@@ -1,38 +1,33 @@
 import 'dart:collection';
-
-import 'package:voluntiersapp/domain/entities/voluntier/volunteerShift.dart';
-import 'package:voluntiersapp/domain/entities/voluntier/volunteer.dart';
+import 'package:flutter/foundation.dart';
+import 'package:voluntiersapp/domain/entities/volunteer/positions.dart';
+import 'package:voluntiersapp/domain/entities/volunteer/volunteerShift.dart';
+import 'package:voluntiersapp/domain/entities/volunteer/volunteer.dart';
 
 class YounityVolunteerScheduler {
   List<Volunteer> volunteers;
   List<VolunteerShift> shifts;
-  HashMap<String, List<String>> positionRestrictions;
+  Map<Position, List<ReceptionOption>> positionRestrictions;
 
-  YounityVolunteerScheduler()
-      : volunteers = [],
-        shifts = [],
-        positionRestrictions = HashMap() {
-    positionRestrictions['Recepção'] = ['Livro', 'Cantina'];
-    positionRestrictions['Estacionamento'] = [];
-    positionRestrictions['Hall de entrada'] = [];
-    positionRestrictions['Hospitalidade'] = [];
-    
-    /* Add Announcements based on volunteers with allowedToAnnounciment permission */
-    positionRestrictions['Anúncios'] = volunteers
-        .where((volunteer) => volunteer.allowedToAnnounciment)
-        .map((volunteer) => volunteer.name)
-        .toList();
+  YounityVolunteerScheduler(): volunteers = [],
+    shifts = [],
+    positionRestrictions = HashMap() {
+    positionRestrictions[Position.reception] = [
+      ReceptionOption.library, 
+      ReceptionOption.canteen
+    ];
+    positionRestrictions[Position.parking] = [];
+    positionRestrictions[Position.lobby] = [];
+    positionRestrictions[Position.hospitality] = [];
+    positionRestrictions[Position.announcements] = [];
   }
 
-  /* Method to add a volunteer */
-    void addVolunteer(Volunteer volunteer) {
+  void addVolunteer(Volunteer volunteer) {
     volunteers.add(volunteer);
 
     updateAnnouncementsRestrictions();
   }
 
-
-  /* Method to remove a volunteer */
   void removeVolunteer(String name) {
     volunteers.removeWhere((volunteer) => volunteer.name == name);
     
@@ -42,24 +37,22 @@ class YounityVolunteerScheduler {
 
   /* Method to update Announcements restrictions based on volunteers' permissions */
   void updateAnnouncementsRestrictions() {
-    positionRestrictions['Anúncios'] = volunteers
-        .where((volunteer) => volunteer.allowedToAnnounciment)
-        .map((volunteer) => volunteer.name)
-        .toList();
+    bool hasPermission = volunteers.any((volunteer) => volunteer.permissions.announcements ?? false);
+    positionRestrictions[Position.announcements] = hasPermission ? ReceptionOption.values : [];
   }
 
-  /* Method to list all volunteers */
   List<Volunteer> listVolunteers() {
     return volunteers;
   }
 
   /* Method to add a volunteer to a specific shift */
   void addShift(String position, String volunteerName, String date) {
-    /* Check restrictions before adding */
     if (checkRestrictions(position, volunteerName)) {
       shifts.add(VolunteerShift(position, volunteerName, date));
     } else {
-      print("Could not add $volunteerName to position $position due to restrictions.");
+      if (kDebugMode) {
+        print("Could not add $volunteerName to position $position due to restrictions.");
+      }
     }
   }
 
@@ -73,6 +66,7 @@ class YounityVolunteerScheduler {
   bool checkRestrictions(String position, String volunteerName) {
     /* Implementation of specific position restrictions */
     /* For example, check if the volunteer is in the allowed list for "Announcements" */
+    
     return true;
   }
 

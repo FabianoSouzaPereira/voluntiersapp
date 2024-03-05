@@ -7,13 +7,18 @@
  Engaged: Committed to marry but not yet married.
  Dating: In a romantic relationship but not legally recognized.
 */
+import 'package:voluntiersapp/domain/entities/volunteer/helthy.dart';
+import 'package:voluntiersapp/domain/entities/volunteer/marital_status.dart';
+import 'package:voluntiersapp/domain/entities/volunteer/permissions.dart';
+import 'package:voluntiersapp/domain/entities/volunteer/positions.dart';
+
 class Volunteer {
   final String id;
   final String name;
   final String gender;
   final MaritalStatus maritalStatus;
   final int availableWeekends;
-  final List<String> positions;
+  final Positions positions;
   final bool translator;
   final Permissions permissions;
   final bool available;
@@ -32,14 +37,13 @@ class Volunteer {
     this.health = Health.healthy,
   });
 
-  // Adicionando o método copyWith
   Volunteer copyWith({
     String? id,
     String? name,
     String? gender,
     MaritalStatus? maritalStatus,
     int? availableWeekends,
-    List<String>? positions,
+    Positions? positions,
     bool? translator,
     Permissions? permissions,
     bool? available,
@@ -66,58 +70,17 @@ class Volunteer {
   bool isMaritalNameVolunteer(List<Volunteer> allVolunteers) {
     return allVolunteers.any((volunteer) => volunteer.name == name);
   }
-}
 
-class Permissions {
-  final bool translate;
-  final bool announce;
-  final bool library;
-  final bool cantina;
-
-  const Permissions({
-    this.translate = false,
-    this.announce = false,
-    this.library = false,
-    this.cantina = false,
-  });
-
-  
-  Permissions copyWith({
-    bool? translate,
-    bool? announce,
-    bool? library,
-    bool? cantina,
-  }) {
-    return Permissions(
-      translate: translate ?? this.translate,
-      announce: announce ?? this.announce,
-      library: library ?? this.library,
-      cantina: cantina ?? this.cantina,
-    );
+  bool? isAllowedToAnnouncements(){
+    return permissions.announcements;
   }
+
+  bool hasPermission(Permission permission) {
+    return permissions.getPermissionValue(permission);
+  }
+
+  PositionOption? getPosition(Position position){
+    return positions.getOptions(position);
+  }
+
 }
-
-enum MaritalStatus {
-  single,
-  married,
-  divorced,
-  widowed,
-  separated,
-  engaged,
-  dating,
-}
-
-enum Health {
-  healthy,
-  sick,
-  uninformed,
-}
-
-
-/*   
-// Atualizando a permissão de translate para true
-  Permissions updatedPermissions = volunteer.permissions.copyWith(translate: true);
-
-  // Agora, atualizando a instância de Volunteer com as novas permissões
-  Volunteer updatedVolunteer = volunteer.copyWith(permissions: updatedPermissions);
-*/
