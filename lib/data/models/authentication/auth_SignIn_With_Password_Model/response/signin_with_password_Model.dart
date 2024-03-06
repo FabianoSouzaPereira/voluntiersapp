@@ -3,7 +3,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 
-class User extends Equatable {
+class SignInWithPasswordResponseModel extends Equatable {
   final String kind;
   final String localId;
   final String email;
@@ -18,9 +18,9 @@ class User extends Equatable {
   final String expiresIn;
   final String mfaPendingCredential;
   final List<MfaEnrollment> mfaInfo;
-  final List<UserNotification> userNotifications;
+  final List<SignInWithPasswordResponseModelNotification> signInWithPasswordResponseModelNotifications;
 
-  const User({
+  const SignInWithPasswordResponseModel({
     required this.kind,
     required this.localId,
     required this.email,
@@ -35,7 +35,7 @@ class User extends Equatable {
     required this.expiresIn,
     required this.mfaPendingCredential,
     required this.mfaInfo,
-    required this.userNotifications,
+    required this.signInWithPasswordResponseModelNotifications,
   });
 
   @override
@@ -54,13 +54,13 @@ class User extends Equatable {
         expiresIn,
         mfaPendingCredential,
         mfaInfo,
-        userNotifications,
+        signInWithPasswordResponseModelNotifications,
       ];
 
   @override
   bool get stringify => true;
 
-  User copyWith({
+  SignInWithPasswordResponseModel copyWith({
     String? kind,
     String? localId,
     String? email,
@@ -75,9 +75,9 @@ class User extends Equatable {
     String? expiresIn,
     String? mfaPendingCredential,
     List<MfaEnrollment>? mfaInfo,
-    List<UserNotification>? userNotifications,
+    List<SignInWithPasswordResponseModelNotification>? signInWithPasswordResponseModelNotifications,
   }) {
-    return User(
+    return SignInWithPasswordResponseModel(
       kind: kind ?? this.kind,
       localId: localId ?? this.localId,
       email: email ?? this.email,
@@ -92,7 +92,7 @@ class User extends Equatable {
       expiresIn: expiresIn ?? this.expiresIn,
       mfaPendingCredential: mfaPendingCredential ?? this.mfaPendingCredential,
       mfaInfo: mfaInfo ?? this.mfaInfo,
-      userNotifications: userNotifications ?? this.userNotifications,
+      signInWithPasswordResponseModelNotifications: signInWithPasswordResponseModelNotifications ?? this.signInWithPasswordResponseModelNotifications,
     );
   }
 
@@ -100,7 +100,7 @@ class User extends Equatable {
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
 
-    return o is User &&
+    return o is SignInWithPasswordResponseModel &&
         o.kind == kind &&
         o.localId == localId &&
         o.email == email &&
@@ -115,7 +115,7 @@ class User extends Equatable {
         o.expiresIn == expiresIn &&
         o.mfaPendingCredential == mfaPendingCredential &&
         listEquals(o.mfaInfo, mfaInfo) &&
-        listEquals(o.userNotifications, userNotifications);
+        listEquals(o.signInWithPasswordResponseModelNotifications, signInWithPasswordResponseModelNotifications);
   }
 
   @override
@@ -134,12 +134,12 @@ class User extends Equatable {
         expiresIn.hashCode ^
         mfaPendingCredential.hashCode ^
         mfaInfo.hashCode ^
-        userNotifications.hashCode;
+        signInWithPasswordResponseModelNotifications.hashCode;
   }
 
   @override
   String toString() {
-    return 'User{kind: $kind, localId: $localId, email: $email, displayName: $displayName, idToken: $idToken, registered: $registered, profilePicture: $profilePicture, oauthAccessToken: $oauthAccessToken, oauthExpireIn: $oauthExpireIn, oauthAuthorizationCode: $oauthAuthorizationCode, refreshToken: $refreshToken, expiresIn: $expiresIn, mfaPendingCredential: $mfaPendingCredential, mfaInfo: $mfaInfo, userNotifications: $userNotifications}';
+    return 'SignInWithPasswordResponseModel{kind: $kind, localId: $localId, email: $email, displayName: $displayName, idToken: $idToken, registered: $registered, profilePicture: $profilePicture, oauthAccessToken: $oauthAccessToken, oauthExpireIn: $oauthExpireIn, oauthAuthorizationCode: $oauthAuthorizationCode, refreshToken: $refreshToken, expiresIn: $expiresIn, mfaPendingCredential: $mfaPendingCredential, mfaInfo: $mfaInfo, signInWithPasswordResponseModelNotifications: $signInWithPasswordResponseModelNotifications}';
   }
 }
 
@@ -187,11 +187,11 @@ class EmailInfo extends Equatable {
 
 class TotpInfo {}
 
-class UserNotification extends Equatable {
+class SignInWithPasswordResponseModelNotification extends Equatable {
   final NotificationCode notificationCode;
   final String notificationMessage;
 
-  const UserNotification({
+  const SignInWithPasswordResponseModelNotification({
     required this.notificationCode,
     required this.notificationMessage,
   });
@@ -213,7 +213,7 @@ enum NotificationCode {
 
 void main() {
   // Teste
-  final user = User(
+  final signInWithPasswordResponse = SignInWithPasswordResponseModel(
     kind: "",
     localId: "",
     email: "",
@@ -238,8 +238,8 @@ void main() {
         unobfuscatedPhoneInfo: "",
       ),
     ],
-    userNotifications: const [
-      UserNotification(
+    signInWithPasswordResponseModelNotifications: const [
+      SignInWithPasswordResponseModelNotification(
         notificationCode: NotificationCode.NOTIFICATION_CODE_UNSPECIFIED,
         notificationMessage: "",
       ),
@@ -247,6 +247,6 @@ void main() {
   );
 
   if (kDebugMode) {
-    print(user.toString());
+    print(signInWithPasswordResponse.toString());
   }
 }

@@ -15,7 +15,7 @@ class AuthLoginModel {
   static fromJson(data) {}
 }
 
-/* Adding the ability to convert to UserEntity to UserModel */
+/* Adding the ability to convert to UserEntity */
 extension AuthLoginModelX on AuthLoginModel {
   AuthLoginEntity toEntity() {
     return AuthLoginEntity(
