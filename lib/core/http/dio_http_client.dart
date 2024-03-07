@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:voluntiersapp/core/http/abstract_http_client.dart';
+import 'package:volunteersapp/core/http/abstract_http_client.dart';
 
 class DioHttpClient extends AbstractHttpClient {
   // AbstractLocalAuthRepository localAuthRepository;
