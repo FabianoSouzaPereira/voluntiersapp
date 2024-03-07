@@ -1,5 +1,5 @@
 import 'dart:ffi';
-import 'package:voluntiersapp/domain/entities/auth_login_entity.dart';
+import 'package:volunteersapp/domain/entities/auth_login_entity.dart';
 
 class AuthLoginModel {
   final String email;

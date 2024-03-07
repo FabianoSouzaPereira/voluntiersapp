@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:voluntiersapp/locator.dart';
-import 'package:voluntiersapp/presentation/home/widgets/home_topbar.dart';
+import 'package:volunteersapp/locator.dart';
+import 'package:volunteersapp/presentation/home/widgets/home_topbar.dart';
 
 void main() {
   setUp(() async {

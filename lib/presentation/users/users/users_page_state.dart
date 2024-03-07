@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:voluntiersapp/data/models/users_model.dart';
+import 'package:volunteersapp/data/models/users_model.dart';
 
 abstract class UsersPageState extends Equatable {
   @override

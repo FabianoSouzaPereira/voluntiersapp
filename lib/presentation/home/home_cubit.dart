@@ -1,10 +1,10 @@
 // home_cubit.dart
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:voluntiersapp/presentation/home/widgets/grid_icon.dart';
-import 'package:voluntiersapp/presentation/home/widgets/home_card.dart';
+import 'package:volunteersapp/presentation/home/widgets/grid_icon.dart';
+import 'package:volunteersapp/presentation/home/widgets/home_card.dart';
 import 'home_page_state.dart';
-import 'package:voluntiersapp/core/router/paths.dart' as paths;
+import 'package:volunteersapp/core/router/paths.dart' as paths;
 
 final List<HomeCard> cards = [
   HomeCard(

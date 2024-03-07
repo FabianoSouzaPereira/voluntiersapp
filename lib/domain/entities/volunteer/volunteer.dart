@@ -7,10 +7,10 @@
  Engaged: Committed to marry but not yet married.
  Dating: In a romantic relationship but not legally recognized.
 */
-import 'package:voluntiersapp/domain/entities/volunteer/helthy.dart';
-import 'package:voluntiersapp/domain/entities/volunteer/marital_status.dart';
-import 'package:voluntiersapp/domain/entities/volunteer/permissions.dart';
-import 'package:voluntiersapp/domain/entities/volunteer/positions.dart';
+import 'package:volunteersapp/domain/entities/volunteer/helthy.dart';
+import 'package:volunteersapp/domain/entities/volunteer/marital_status.dart';
+import 'package:volunteersapp/domain/entities/volunteer/permissions.dart';
+import 'package:volunteersapp/domain/entities/volunteer/positions.dart';
 
 class Volunteer {
   final String id;

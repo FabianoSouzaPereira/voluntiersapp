@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:voluntiersapp/data/models/authentication/auth_login_model.dart';
+import 'package:volunteersapp/data/models/authentication/auth_login_model.dart';
 
 abstract class AuthPageState extends Equatable {
   @override

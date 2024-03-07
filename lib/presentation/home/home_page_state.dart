@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:voluntiersapp/presentation/home/widgets/home_card.dart';
+import 'package:volunteersapp/presentation/home/widgets/home_card.dart';
 
 abstract class HomeState extends Equatable {
   final List<HomeCard> cards;

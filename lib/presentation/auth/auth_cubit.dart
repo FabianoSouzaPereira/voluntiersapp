@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:voluntiersapp/data/auth/auth_repository_impl.dart';
-import 'package:voluntiersapp/presentation/auth/auth_page_state.dart';
+import 'package:volunteersapp/data/auth/auth_repository_impl.dart';
+import 'package:volunteersapp/presentation/auth/auth_page_state.dart';
 
 class AuthCubit extends Cubit<AuthPageState> {
   final AuthRepositoryImpl authRepository;
@@ -15,7 +15,8 @@ class AuthCubit extends Cubit<AuthPageState> {
     emit(AuthPageLoading());
     try {
       final success = await authRepository.login(email, password);
-      if (success) {
+      // Todo check this conditional
+      if (success.data?.email != null) {
         emit(AuthPageLoaded(listAuthLogin: const []));
       } else {
         emit(AuthPageError('Failed to login'));

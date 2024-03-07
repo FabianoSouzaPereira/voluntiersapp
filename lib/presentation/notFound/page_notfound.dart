@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:voluntiersapp/core/router/paths.dart' as paths;
+import 'package:volunteersapp/core/router/paths.dart' as paths;
 
 class NotFoundPage extends StatelessWidget {
   const NotFoundPage({super.key});

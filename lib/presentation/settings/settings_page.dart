@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:voluntiersapp/presentation/widgets/reorderableListWidget.dart';
-import 'package:voluntiersapp/core/router/paths.dart' as paths;
+import 'package:volunteersapp/presentation/widgets/reorderableListWidget.dart';
+import 'package:volunteersapp/core/router/paths.dart' as paths;
 
 class SettingsPage extends StatelessWidget {
   final String title;

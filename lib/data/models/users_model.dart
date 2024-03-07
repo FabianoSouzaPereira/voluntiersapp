@@ -1,4 +1,4 @@
-import 'package:voluntiersapp/domain/entities/user_entity.dart';
+import 'package:volunteersapp/domain/entities/user_entity.dart';
 
 class UserModel {
   String id;

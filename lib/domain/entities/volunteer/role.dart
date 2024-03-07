@@ -1,5 +1,5 @@
-import 'package:voluntiersapp/domain/entities/volunteer/permissions.dart';
-import 'package:voluntiersapp/domain/entities/volunteer/roleType.dart';
+import 'package:volunteersapp/domain/entities/volunteer/permissions.dart';
+import 'package:volunteersapp/domain/entities/volunteer/roleType.dart';
 
 class Role {
   final RoleType roleType;

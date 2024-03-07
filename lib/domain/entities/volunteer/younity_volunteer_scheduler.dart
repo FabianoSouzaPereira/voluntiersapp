@@ -1,8 +1,8 @@
 import 'dart:collection';
 import 'package:flutter/foundation.dart';
-import 'package:voluntiersapp/domain/entities/volunteer/positions.dart';
-import 'package:voluntiersapp/domain/entities/volunteer/volunteerShift.dart';
-import 'package:voluntiersapp/domain/entities/volunteer/volunteer.dart';
+import 'package:volunteersapp/domain/entities/volunteer/positions.dart';
+import 'package:volunteersapp/domain/entities/volunteer/volunteerShift.dart';
+import 'package:volunteersapp/domain/entities/volunteer/volunteer.dart';
 
 class YounityVolunteerScheduler {
   List<Volunteer> volunteers;

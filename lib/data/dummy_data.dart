@@ -1,4 +1,4 @@
-import 'package:voluntiersapp/data/models/users_model.dart';
+import 'package:volunteersapp/data/models/users_model.dart';
 
 const dummyCategories = [];
 

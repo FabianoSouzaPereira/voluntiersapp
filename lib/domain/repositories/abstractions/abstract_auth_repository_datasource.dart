@@ -1,4 +1,4 @@
-import 'package:voluntiersapp/data/models/authentication/auth_login_model.dart';
+import 'package:volunteersapp/data/models/authentication/auth_login_model.dart';
 
 abstract class AbastractAuthRepositoryDataSource {
   Future<AuthLoginModel> signInWithEmailAndPassword(String email, String password);

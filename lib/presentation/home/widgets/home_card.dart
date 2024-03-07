@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voluntiersapp/presentation/home/widgets/grid_icon.dart';
+import 'package:volunteersapp/presentation/home/widgets/grid_icon.dart';
 
 class HomeCard extends StatefulWidget {
   final Function() onPressed;

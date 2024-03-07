@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:voluntiersapp/presentation/helpers/http_helper.dart';
+import 'package:volunteersapp/presentation/helpers/http_helper.dart';
 
 class ResponseData<T> extends Equatable {
   final T? data;

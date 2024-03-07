@@ -1,5 +1,5 @@
-import 'package:voluntiersapp/data/models/ecclesiastical_model.dart';
-import 'package:voluntiersapp/data/models/residency/address_model.dart';
+import 'package:volunteersapp/data/models/ecclesiastical_model.dart';
+import 'package:volunteersapp/data/models/residency/address_model.dart';
 
 class ShapherdModel {
   final String id;

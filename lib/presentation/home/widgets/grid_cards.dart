@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:voluntiersapp/presentation/home/widgets/home_card.dart';
-import 'package:voluntiersapp/presentation/home/widgets/notification_icon.dart';
+import 'package:volunteersapp/presentation/home/widgets/home_card.dart';
+import 'package:volunteersapp/presentation/home/widgets/notification_icon.dart';
 
 class CardsGrid extends StatefulWidget {
   final List<HomeCard> cards;
