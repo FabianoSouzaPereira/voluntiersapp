@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:voluntiersapp/presentation/home/home_cubit.dart';
-import 'package:voluntiersapp/presentation/home/home_page_state.dart';
-import 'package:voluntiersapp/presentation/home/widgets/grid_cards.dart';
+import 'package:volunteersapp/presentation/home/home_cubit.dart';
+import 'package:volunteersapp/presentation/home/home_page_state.dart';
+import 'package:volunteersapp/presentation/home/widgets/grid_cards.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatelessWidget {

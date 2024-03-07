@@ -1,6 +1,6 @@
-import 'package:voluntiersapp/core/http/abstract_http_client.dart';
-import 'package:voluntiersapp/data/models/users_model.dart';
-import 'package:voluntiersapp/domain/repositories/response_data.dart';
+import 'package:volunteersapp/core/http/abstract_http_client.dart';
+import 'package:volunteersapp/data/models/users_model.dart';
+import 'package:volunteersapp/domain/repositories/response_data.dart';
 
 abstract class AbstractUserRepository {
   AbstractUserRepository(AbstractHttpClient client);

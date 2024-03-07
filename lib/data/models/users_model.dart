@@ -1,4 +1,4 @@
-import 'package:voluntiersapp/domain/entities/user_entity.dart';
+import 'package:volunteersapp/domain/entities/user_entity.dart';
 
 class UserModel {
   String id;
@@ -29,7 +29,6 @@ class UserModel {
 }
 
 /* Adding the ability to convert to UserEntity to UserModel */
-
 extension UserModelX on UserModel {
   UserEntity toEntity() {
     return UserEntity(

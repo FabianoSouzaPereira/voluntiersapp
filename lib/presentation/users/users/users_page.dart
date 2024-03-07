@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:voluntiersapp/presentation/users/users/users_cubit.dart';
-import 'package:voluntiersapp/presentation/users/users/users_page_state.dart';
-import 'package:voluntiersapp/presentation/widgets/reorderableListWidget.dart';
+import 'package:volunteersapp/presentation/users/users/users_cubit.dart';
+import 'package:volunteersapp/presentation/users/users/users_page_state.dart';
+import 'package:volunteersapp/presentation/widgets/reorderableListWidget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:voluntiersapp/core/router/paths.dart' as paths;
+import 'package:volunteersapp/core/router/paths.dart' as paths;
 import 'package:get_it/get_it.dart';
 
 class UserPage extends StatelessWidget {

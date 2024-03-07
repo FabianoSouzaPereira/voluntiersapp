@@ -1,11 +1,11 @@
 {
-    "name": "voluntiersapp",
-    "short_name": "voluntiersapp",
+    "name": "volunteersapp",
+    "short_name": "volunteersapp",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A volunteer project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

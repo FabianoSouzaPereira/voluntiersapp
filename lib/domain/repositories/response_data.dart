@@ -1,29 +1,32 @@
 import 'package:equatable/equatable.dart';
-import 'package:voluntiersapp/presentation/helpers/http_helper.dart';
+import 'package:volunteersapp/presentation/helpers/http_helper.dart';
 
 class ResponseData<T> extends Equatable {
-  T? data;
-  bool success;
-  ResultStatusCode? statusCode;
-  String? errorMessage;
+  final T? data;
+  final bool? success;
+  final bool? error;
+  final ResultStatusCode? statusCode;
+  final String? errorMessage;
 
-  ResponseData({
+  const ResponseData({
     this.data,
-    required this.success,
+    this.success = false,
+    this.error = false,
     this.statusCode,
     this.errorMessage,
   });
 
   @override
   String toString() {
-    return 'ResponseData(data: $data, success: $success, statusCode: $statusCode, errorMessage: $errorMessage)';
+    return 'ResponseData(data: $data, success: $success, error: $error, statusCode: $statusCode, errorMessage: $errorMessage)';
   }
 
   @override
   List<Object?> get props => [
-        data,
-        success,
-        statusCode,
-        errorMessage,
-      ];
+    data,
+    success,
+    error,
+    statusCode,
+    errorMessage,
+  ];
 }
