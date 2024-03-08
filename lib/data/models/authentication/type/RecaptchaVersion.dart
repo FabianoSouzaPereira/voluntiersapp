@@ -1,0 +1,4 @@
+enum RecaptchaVersion {
+    RECAPTCHA_VERSION_UNSPECIFIED,
+    RECAPTCHA_ENTERPRISE,
+}

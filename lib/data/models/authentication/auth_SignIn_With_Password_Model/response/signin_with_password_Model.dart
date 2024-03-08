@@ -172,6 +172,10 @@ class MfaEnrollment extends Equatable {
         emailInfo,
         unobfuscatedPhoneInfo,
       ];
+
+  static fromMap(json) {}
+
+  toMap() {}
 }
 
 class EmailInfo extends Equatable {
@@ -183,9 +187,17 @@ class EmailInfo extends Equatable {
 
   @override
   List<Object> get props => [emailAddress];
+
+  static fromMap(json) {}
+
+  toMap() {}
 }
 
-class TotpInfo {}
+class TotpInfo {
+  static fromMap(json) {}
+
+  toMap() {}
+}
 
 class SignInWithPasswordResponseModelNotification extends Equatable {
   final NotificationCode notificationCode;
@@ -209,44 +221,3 @@ enum NotificationCode {
   MINIMUM_PASSWORD_LENGTH,
   MAXIMUM_PASSWORD_LENGTH,
 } 
-
-
-void main() {
-  // Teste
-  final signInWithPasswordResponse = SignInWithPasswordResponseModel(
-    kind: "",
-    localId: "",
-    email: "",
-    displayName: "",
-    idToken: "",
-    registered: true,
-    profilePicture: "",
-    oauthAccessToken: "",
-    oauthExpireIn: 0,
-    oauthAuthorizationCode: "",
-    refreshToken: "",
-    expiresIn: "",
-    mfaPendingCredential: "",
-    mfaInfo: [
-      MfaEnrollment(
-        mfaEnrollmentId: "",
-        displayName: "",
-        enrolledAt: "",
-        phoneInfo: "",
-        totpInfo: TotpInfo(),
-        emailInfo: const EmailInfo(emailAddress: ""),
-        unobfuscatedPhoneInfo: "",
-      ),
-    ],
-    signInWithPasswordResponseModelNotifications: const [
-      SignInWithPasswordResponseModelNotification(
-        notificationCode: NotificationCode.NOTIFICATION_CODE_UNSPECIFIED,
-        notificationMessage: "",
-      ),
-    ],
-  );
-
-  if (kDebugMode) {
-    print(signInWithPasswordResponse.toString());
-  }
-}

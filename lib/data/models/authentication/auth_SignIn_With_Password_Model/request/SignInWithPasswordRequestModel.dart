@@ -1,96 +1,80 @@
-// ignore_for_file: constant_identifier_names
-
 import 'package:equatable/equatable.dart';
+import 'package:volunteersapp/data/models/authentication/type/HasType.dart';
+import 'package:volunteersapp/data/models/authentication/type/Version.dart';
 
-class SigInWithPasswordRequestModel extends Equatable {
-  final String email;
-  final String password;
-  final String pendingIdToken;
-  final String captchaChallenge;
-  final String captchaResponse;
-  final String instanceId;
-  final String delegatedProjectNumber;
-  final String idToken;
-  final bool returnSecureToken;
-  final String tenantId;
-  final ClientType clientType;
-  final RecaptchaVersion recaptchaVersion;
+class Argon2Parameters extends Equatable {
+  final int? hashLengthBytes;
+  final HashType? hashType;
+  final int? parallelism;
+  final int? iterations;
+  final int? memoryCostKib;
+  final Version? version;
+  final String? associatedData;
 
-  const SigInWithPasswordRequestModel({
-    required this.email,
-    required this.password,
-    required this.pendingIdToken,
-    required this.captchaChallenge,
-    required this.captchaResponse,
-    required this.instanceId,
-    required this.delegatedProjectNumber,
-    required this.idToken,
-    required this.returnSecureToken,
-    required this.tenantId,
-    required this.clientType,
-    required this.recaptchaVersion,
+  Argon2Parameters({
+    this.hashLengthBytes,
+    this.hashType,
+    this.parallelism,
+    this.iterations,
+    this.memoryCostKib,
+    this.version,
+    this.associatedData,
   });
 
-  @override
-  List<Object?> get props => [
-        email,
-        password,
-        pendingIdToken,
-        captchaChallenge,
-        captchaResponse,
-        instanceId,
-        delegatedProjectNumber,
-        idToken,
-        returnSecureToken,
-        tenantId,
-        clientType,
-        recaptchaVersion,
-      ];
-
-  SigInWithPasswordRequestModel copyWith({
-    String? email,
-    String? password,
-    String? pendingIdToken,
-    String? captchaChallenge,
-    String? captchaResponse,
-    String? instanceId,
-    String? delegatedProjectNumber,
-    String? idToken,
-    bool? returnSecureToken,
-    String? tenantId,
-    ClientType? clientType,
-    RecaptchaVersion? recaptchaVersion,
+  Argon2Parameters copyWith({
+    int? hashLengthBytes,
+    HashType? hashType,
+    int? parallelism,
+    int? iterations,
+    int? memoryCostKib,
+    Version? version,
+    String? associatedData,
   }) {
-    return SigInWithPasswordRequestModel(
-      email: email ?? this.email,
-      password: password ?? this.password,
-      pendingIdToken: pendingIdToken ?? this.pendingIdToken,
-      captchaChallenge: captchaChallenge ?? this.captchaChallenge,
-      captchaResponse: captchaResponse ?? this.captchaResponse,
-      instanceId: instanceId ?? this.instanceId,
-      delegatedProjectNumber: delegatedProjectNumber ?? this.delegatedProjectNumber,
-      idToken: idToken ?? this.idToken,
-      returnSecureToken: returnSecureToken ?? this.returnSecureToken,
-      tenantId: tenantId ?? this.tenantId,
-      clientType: clientType ?? this.clientType,
-      recaptchaVersion: recaptchaVersion ?? this.recaptchaVersion,
+    return Argon2Parameters(
+      hashLengthBytes: hashLengthBytes ?? this.hashLengthBytes,
+      hashType: hashType ?? this.hashType,
+      parallelism: parallelism ?? this.parallelism,
+      iterations: iterations ?? this.iterations,
+      memoryCostKib: memoryCostKib ?? this.memoryCostKib,
+      version: version ?? this.version,
+      associatedData: associatedData ?? this.associatedData,
     );
   }
 
   @override
-  String toString() {
-    return 'SigInWithPasswordRequestModel{email: $email, password: $password, pendingIdToken: $pendingIdToken, captchaChallenge: $captchaChallenge, captchaResponse: $captchaResponse, instanceId: $instanceId, delegatedProjectNumber: $delegatedProjectNumber, idToken: $idToken, returnSecureToken: $returnSecureToken, tenantId: $tenantId, clientType: $clientType, recaptchaVersion: $recaptchaVersion}';
+  List<Object?> get props => [
+        hashLengthBytes,
+        hashType,
+        parallelism,
+        iterations,
+        memoryCostKib,
+        version,
+        associatedData,
+      ];
+
+  factory Argon2Parameters.fromJson(Map<String, dynamic> json) {
+    return Argon2Parameters(
+      hashLengthBytes: json['hashLengthBytes'],
+      hashType: json['hashType'] != null
+          ? HashType.values[json['hashType']]
+          : null,
+      parallelism: json['parallelism'],
+      iterations: json['iterations'],
+      memoryCostKib: json['memoryCostKib'],
+      version: json['version'] != null ? Version.values[json['version']] : null,
+      associatedData: json['associatedData'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'hashLengthBytes': hashLengthBytes,
+      'hashType': hashType?.index,
+      'parallelism': parallelism,
+      'iterations': iterations,
+      'memoryCostKib': memoryCostKib,
+      'version': version?.index,
+      'associatedData': associatedData,
+    };
   }
 }
-
-  enum ClientType { 
-    CLIENT_TYPE_UNSPECIFIED,
-    CLIENT_TYPE_WEB,
-    CLIENT_TYPE_ANDROID,
-    CLIENT_TYPE_IOS,
-  }
-
-  enum RecaptchaVersion { 
-    RECAPTCHA_VERSION_UNSPECIFIED,
-    RECAPTCHA_ENTERPRISE,
-  } 

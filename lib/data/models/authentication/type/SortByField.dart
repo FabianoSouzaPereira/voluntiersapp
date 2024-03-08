@@ -1,0 +1,8 @@
+enum SortByField {
+  SORT_BY_FIELD_UNSPECIFIED,
+  USER_ID,
+  NAME,
+  CREATED_AT,
+  LAST_LOGIN_AT,
+  USER_EMAIL,
+}
