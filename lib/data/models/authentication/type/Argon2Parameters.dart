@@ -20,20 +20,7 @@ class Argon2Parameters {
     this.associatedData = "",
   });
 
-  Argon2Parameters.fromJson(Map<String, dynamic> json) {
-    hashLengthBytes = json['hashLengthBytes'] ?? 0; 
-    hashType = json['hashType'] != null
-        ? HashType.values[json['hashType']]
-        : HashType.HASH_TYPE_UNSPECIFIED; 
-    parallelism = json['parallelism'] ?? 0; 
-    iterations = json['iterations'] ?? 0; 
-    memoryCostKib = json['memoryCostKib'] ?? 0; 
-    version = json['version'] != null
-        ? Version.values[json['version']]
-        : Version.VERSION_UNSPECIFIED; 
-    associatedData = json['associatedData'] ?? "";
-
-    Map<String, dynamic> toJson() {
+  Map<String, dynamic> toJson() {
       final Map<String, dynamic> data = <String, dynamic>{};
       data['hashLengthBytes'] = hashLengthBytes;
       if (hashType != null && hashType != HashType.HASH_TYPE_UNSPECIFIED) {
@@ -47,6 +34,19 @@ class Argon2Parameters {
       }
       data['associatedData'] = associatedData;
       return data;
-    }
+  }
+
+  Argon2Parameters.fromJson(Map<String, dynamic> json) {
+    hashLengthBytes = json['hashLengthBytes'] ?? 0; 
+    hashType = json['hashType'] != null
+        ? HashType.values[json['hashType']]
+        : HashType.HASH_TYPE_UNSPECIFIED; 
+    parallelism = json['parallelism'] ?? 0; 
+    iterations = json['iterations'] ?? 0; 
+    memoryCostKib = json['memoryCostKib'] ?? 0; 
+    version = json['version'] != null
+        ? Version.values[json['version']]
+        : Version.VERSION_UNSPECIFIED; 
+    associatedData = json['associatedData'] ?? "";
   }
 }

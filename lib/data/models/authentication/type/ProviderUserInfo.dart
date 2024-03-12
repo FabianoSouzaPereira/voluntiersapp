@@ -42,7 +42,7 @@ class ProviderUserInfo {
             phoneNumber: phoneNumber ?? this.phoneNumber,
         );
 
-    factory ProviderUserInfo.fromMap(Map<String, dynamic> json) => ProviderUserInfo(
+    factory ProviderUserInfo.fromJson(Map<String, dynamic> json) => ProviderUserInfo(
         providerId: json["providerId"] ?? "",
         displayName: json["displayName"] ?? "",
         photoUrl: json["photoUrl"] ?? "",
@@ -53,7 +53,7 @@ class ProviderUserInfo {
         phoneNumber: json["phoneNumber"] ?? "",
     );
 
-    Map<String, dynamic> toMap() => {
+    Map<String, dynamic> toJson() => {
         "providerId": providerId,
         "displayName": displayName,
         "photoUrl": photoUrl,
@@ -65,7 +65,7 @@ class ProviderUserInfo {
     };
 }
 
-ProviderUserInfo providerUserInfoFromMap(String str) => ProviderUserInfo.fromMap(json.decode(str));
+ProviderUserInfo providerUserInfoFromMap(String str) => ProviderUserInfo.fromJson(json.decode(str));
 
-String providerUserInfoToMap(ProviderUserInfo data) => json.encode(data.toMap());
+String providerUserInfoToMap(ProviderUserInfo data) => json.encode(data.toJson());
 

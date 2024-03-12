@@ -1,4 +1,4 @@
-import 'package:volunteersapp/data/models/authentication/auth_SignIn_With_Password_Model/response/signin_with_password_Model.dart';
+import 'package:volunteersapp/data/models/authentication/type/MfaEnrollment.dart';
 
 class MfaInfo {
     final MfaEnrollment? mfaEnrollment;
@@ -14,11 +14,11 @@ class MfaInfo {
             mfaEnrollment: mfaEnrollment ?? this.mfaEnrollment,
         );
 
-    factory MfaInfo.fromMap(Map<String, dynamic> json) => MfaInfo(
-        mfaEnrollment: json["MfaEnrollment"] == null ? null : MfaEnrollment.fromMap(json["MfaEnrollment"]),
+    factory MfaInfo.fromJson(Map<String, dynamic> json) => MfaInfo(
+        mfaEnrollment: json["MfaEnrollment"] == null ? null : MfaEnrollment.fromJson(json["MfaEnrollment"]),
     );
 
-    Map<String, dynamic> toMap() => {
-        "MfaEnrollment": mfaEnrollment?.toMap(),
+    Map<String, dynamic> toJson() => {
+        "MfaEnrollment": mfaEnrollment?.toJson(),
     };
 }

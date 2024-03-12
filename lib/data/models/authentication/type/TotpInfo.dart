@@ -3,7 +3,7 @@ class TotpInfo {
 
     TotpInfo copyWith() => TotpInfo();
 
-    factory TotpInfo.fromMap(Map<String, dynamic> json) => TotpInfo();
+    factory TotpInfo.fromJson(Map<String, dynamic> json) => TotpInfo();
 
-    Map<String, dynamic> toMap() => {};
+    Map<String, dynamic> toJson() => {};
 }

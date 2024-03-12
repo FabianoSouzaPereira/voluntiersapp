@@ -14,16 +14,16 @@ class EmailInfo {
             emailAddress: emailAddress ?? this.emailAddress,
         );
 
-    factory EmailInfo.fromMap(Map<String, dynamic> json) => EmailInfo(
+    factory EmailInfo.fromJson(Map<String, dynamic> json) => EmailInfo(
         emailAddress: json["emailAddress"],
     );
 
-    Map<String, dynamic> toMap() => {
+    Map<String, dynamic> toJson() => {
         "emailAddress": emailAddress,
     };
 }
 
 
-EmailInfo emailInfoFromMap(String str) => EmailInfo.fromMap(json.decode(str));
+EmailInfo emailInfoFromJson(String str) => EmailInfo.fromJson(json.decode(str));
 
-String emailInfoToMap(EmailInfo data) => json.encode(data.toMap());
+String emailInfoToJson(EmailInfo data) => json.encode(data.toJson());

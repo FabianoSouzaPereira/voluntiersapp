@@ -1,8 +1,6 @@
 import 'dart:convert';
-
 import 'package:volunteersapp/data/models/authentication/type/MfaInfo.dart';
 import 'package:volunteersapp/data/models/authentication/type/ProviderUserInfo.dart';
-
 
 class UserInfo {
     final String? localId;
@@ -63,66 +61,7 @@ class UserInfo {
         this.lastRefreshAt,
     });
 
-    UserInfo copyWith({
-        String? localId,
-        String? email,
-        String? displayName,
-        String? language,
-        String? photoUrl,
-        String? timeZone,
-        String? dateOfBirth,
-        String? passwordHash,
-        String? salt,
-        int? version,
-        bool? emailVerified,
-        int? passwordUpdatedAt,
-        List<ProviderUserInfo>? providerUserInfo,
-        String? validSince,
-        bool? disabled,
-        String? lastLoginAt,
-        String? createdAt,
-        String? screenName,
-        bool? customAuth,
-        String? rawPassword,
-        String? phoneNumber,
-        String? customAttributes,
-        bool? emailLinkSignin,
-        String? tenantId,
-        List<MfaInfo>? mfaInfo,
-        String? initialEmail,
-        String? lastRefreshAt,
-    }) => 
-        UserInfo(
-            localId: localId ?? this.localId,
-            email: email ?? this.email,
-            displayName: displayName ?? this.displayName,
-            language: language ?? this.language,
-            photoUrl: photoUrl ?? this.photoUrl,
-            timeZone: timeZone ?? this.timeZone,
-            dateOfBirth: dateOfBirth ?? this.dateOfBirth,
-            passwordHash: passwordHash ?? this.passwordHash,
-            salt: salt ?? this.salt,
-            version: version ?? this.version,
-            emailVerified: emailVerified ?? this.emailVerified,
-            passwordUpdatedAt: passwordUpdatedAt ?? this.passwordUpdatedAt,
-            providerUserInfo: providerUserInfo ?? this.providerUserInfo,
-            validSince: validSince ?? this.validSince,
-            disabled: disabled ?? this.disabled,
-            lastLoginAt: lastLoginAt ?? this.lastLoginAt,
-            createdAt: createdAt ?? this.createdAt,
-            screenName: screenName ?? this.screenName,
-            customAuth: customAuth ?? this.customAuth,
-            rawPassword: rawPassword ?? this.rawPassword,
-            phoneNumber: phoneNumber ?? this.phoneNumber,
-            customAttributes: customAttributes ?? this.customAttributes,
-            emailLinkSignin: emailLinkSignin ?? this.emailLinkSignin,
-            tenantId: tenantId ?? this.tenantId,
-            mfaInfo: mfaInfo ?? this.mfaInfo,
-            initialEmail: initialEmail ?? this.initialEmail,
-            lastRefreshAt: lastRefreshAt ?? this.lastRefreshAt,
-        );
-
-    factory UserInfo.fromMap(Map<String, dynamic> json) => UserInfo(
+    factory UserInfo.fromJson(Map<String, dynamic> json) => UserInfo(
         localId: json["localId"],
         email: json["email"],
         displayName: json["displayName"],
@@ -135,7 +74,7 @@ class UserInfo {
         version: json["version"],
         emailVerified: json["emailVerified"],
         passwordUpdatedAt: json["passwordUpdatedAt"],
-        providerUserInfo: json["providerUserInfo"] == null ? [] : List<ProviderUserInfo>.from(json["providerUserInfo"]!.map((x) => ProviderUserInfo.fromMap(x))),
+        providerUserInfo: json["providerUserInfo"] == null ? [] : List<ProviderUserInfo>.from(json["providerUserInfo"].map((x) => ProviderUserInfo.fromJson(x))),
         validSince: json["validSince"],
         disabled: json["disabled"],
         lastLoginAt: json["lastLoginAt"],
@@ -147,12 +86,12 @@ class UserInfo {
         customAttributes: json["customAttributes"],
         emailLinkSignin: json["emailLinkSignin"],
         tenantId: json["tenantId"],
-        mfaInfo: json["mfaInfo"] == null ? [] : List<MfaInfo>.from(json["mfaInfo"]!.map((x) => MfaInfo.fromMap(x))),
+        mfaInfo: json["mfaInfo"] == null ? [] : List<MfaInfo>.from(json["mfaInfo"].map((x) => MfaInfo.fromJson(x))),
         initialEmail: json["initialEmail"],
         lastRefreshAt: json["lastRefreshAt"],
     );
 
-    Map<String, dynamic> toMap() => {
+    Map<String, dynamic> toJson() => {
         "localId": localId,
         "email": email,
         "displayName": displayName,
@@ -165,7 +104,7 @@ class UserInfo {
         "version": version,
         "emailVerified": emailVerified,
         "passwordUpdatedAt": passwordUpdatedAt,
-        "providerUserInfo": providerUserInfo == null ? [] : List<dynamic>.from(providerUserInfo!.map((x) => x.toMap())),
+        "providerUserInfo": providerUserInfo == null ? [] : List<dynamic>.from(providerUserInfo!.map((x) => x.toJson())),
         "validSince": validSince,
         "disabled": disabled,
         "lastLoginAt": lastLoginAt,
@@ -177,12 +116,8 @@ class UserInfo {
         "customAttributes": customAttributes,
         "emailLinkSignin": emailLinkSignin,
         "tenantId": tenantId,
-        "mfaInfo": mfaInfo == null ? [] : List<dynamic>.from(mfaInfo!.map((x) => x.toMap())),
+        "mfaInfo": mfaInfo == null ? [] : List<dynamic>.from(mfaInfo!.map((x) => x.toJson())),
         "initialEmail": initialEmail,
         "lastRefreshAt": lastRefreshAt,
     };
 }
-
-UserInfo userInfoFromMap(String str) => UserInfo.fromMap(json.decode(str));
-
-String userInfoToMap(UserInfo data) => json.encode(data.toMap());
