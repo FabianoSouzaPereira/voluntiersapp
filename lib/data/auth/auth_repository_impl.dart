@@ -62,7 +62,6 @@ class AuthRepositoryImpl implements AbstractAuthRepository {
   
   @override
   Future<ResponseData<AuthLoginModel>> getlogin(String email, String password) {
-    // TODO: implement getlogin
     throw UnimplementedError();
   }
   

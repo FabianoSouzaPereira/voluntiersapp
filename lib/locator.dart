@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:volunteersapp/data/auth/auth_repository_impl.dart';
 import 'package:volunteersapp/data/user/user_repository_impl.dart';
+import 'package:volunteersapp/domain/usecases/authentication_usecase.dart';
 import 'package:volunteersapp/presentation/auth/auth_cubit.dart';
 import 'package:volunteersapp/presentation/home/home_cubit.dart';
 import 'package:volunteersapp/presentation/home/widgets/card_cubit.dart';
@@ -19,24 +20,30 @@ Future<void> setupLocator() async {
   final sharedPreferences = await SharedPreferences.getInstance();
   getIt.registerLazySingleton(() => sharedPreferences);
 
-// Core
+  // Core
 
-// notifiers
+  // notifiers
 
-// Repositories
-getIt.registerFactory<HttpClient>(() => HttpClient());
+  // Repositories
+  getIt.registerFactory<HttpClient>(() => HttpClient());
 
-getIt.registerFactory<UserRepositoryImpl>(
-  () => UserRepositoryImpl(getIt.get()),
-);
+  getIt.registerFactory<UserRepositoryImpl>(
+    () => UserRepositoryImpl(getIt.get()),
+  );
 
-getIt.registerFactory<AuthRepositoryImpl>(
-  () => AuthRepositoryImpl(getIt.get()),
-);
+  getIt.registerFactory<AuthRepositoryImpl>(
+    () => AuthRepositoryImpl(getIt.get()),
+  );
 
-// Services
+  // Services
 
-// cubits
+  // UseCases
+
+  getIt.registerFactory<AuthenticationUseCase>(
+    () => AuthenticationUseCase(authRepository: getIt.get())
+  );
+
+  // Cubits
 
   getIt.registerFactory<AuthCubit>(
     () => AuthCubit(getIt.get()),
@@ -61,4 +68,5 @@ getIt.registerFactory<AuthRepositoryImpl>(
   getIt.registerFactory<UsersDescriptionsCubit>(
     () => UsersDescriptionsCubit(),
   );
+
 }

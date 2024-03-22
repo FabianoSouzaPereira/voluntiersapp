@@ -4,7 +4,8 @@
         {
             "name": "voluntiersapp",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "flutterMode": "debug"
         },
         {
             "name": "voluntiersapp (profile mode)",

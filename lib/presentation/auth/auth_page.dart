@@ -17,7 +17,6 @@ class AuthPage extends StatelessWidget {
       body: BlocConsumer<AuthCubit, AuthPageState>(
         listener: (context, state) {
           if (state is AuthPageError) {
-            // Mostrar mensagem de erro de login
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text(state.errorMessage),
             ));

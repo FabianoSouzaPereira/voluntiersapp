@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
-import 'package:volunteersapp/l10n/l10n.dart';
+import 'package:volunteersapp/presentation/l10n/l10n.dart';
 import 'package:volunteersapp/locator.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:volunteersapp/presentation/home/home_cubit.dart';
