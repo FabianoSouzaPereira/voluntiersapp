@@ -1,0 +1,4 @@
+enum SignInWithCustomTokenErrors {
+  INVALID_CUSTOM_TOKEN,
+  CREDENTIAL_MISMATCH
+}

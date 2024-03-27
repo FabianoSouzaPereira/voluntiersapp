@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:volunteersapp/data/models/authentication/type/UserInfo.dart';
+import 'package:volunteersapp/data/models/authentication_cloud_firestore/type/UserInfo.dart';
 
 class GetAccountInfoResponse {
     final String? kind;

@@ -1,0 +1,5 @@
+enum SignInWithPasswordError {
+  EMAIL_NOT_FOUND,
+  INVALID_PASSWORD,
+  USER_DISABLED,
+}

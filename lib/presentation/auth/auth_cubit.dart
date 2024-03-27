@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:volunteersapp/data/auth/auth_repository_impl.dart';
-import 'package:volunteersapp/data/models/authentication/auth_login_model.dart';
+import 'package:volunteersapp/data/models/authentication/authentication_and_user_manager.dart/auth_login_model.dart';
 import 'package:volunteersapp/presentation/auth/auth_page_state.dart';
 
 class AuthCubit extends Cubit<AuthPageState> {

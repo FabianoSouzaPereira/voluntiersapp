@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:volunteersapp/data/models/authentication/type/EmailInfo.dart';
-import 'package:volunteersapp/data/models/authentication/type/TotpInfo.dart';
+import 'package:volunteersapp/data/models/authentication_cloud_firestore/type/EmailInfo.dart';
+import 'package:volunteersapp/data/models/authentication_cloud_firestore/type/TotpInfo.dart';
 
 class MfaEnrollment {
     final String? mfaEnrollmentId;

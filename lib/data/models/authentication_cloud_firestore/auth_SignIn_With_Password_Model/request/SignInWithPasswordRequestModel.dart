@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:volunteersapp/data/models/authentication/type/HasType.dart';
-import 'package:volunteersapp/data/models/authentication/type/Version.dart';
+import 'package:volunteersapp/data/models/authentication_cloud_firestore/type/HasType.dart';
+import 'package:volunteersapp/data/models/authentication_cloud_firestore/type/Version.dart';
 
 class Argon2Parameters extends Equatable {
   final int? hashLengthBytes;

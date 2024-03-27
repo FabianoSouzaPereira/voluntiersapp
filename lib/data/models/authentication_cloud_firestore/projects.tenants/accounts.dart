@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:volunteersapp/data/models/authentication/type/MfaInfo.dart';
+import 'package:volunteersapp/data/models/authentication_cloud_firestore/type/MfaInfo.dart';
 
 class ProjectsTenantsAccounts {
     final String? email;

@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:volunteersapp/data/models/authentication/accounts/createAuthUri/CustomParameter.dart';
+import 'package:volunteersapp/data/models/authentication_cloud_firestore/accounts/createAuthUri/CustomParameter.dart';
 
 class CreateAuthUriRequest {
     final String? identifier;

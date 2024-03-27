@@ -1,6 +1,5 @@
-import 'dart:convert';
-import 'package:volunteersapp/data/models/authentication/type/MfaInfo.dart';
-import 'package:volunteersapp/data/models/authentication/type/ProviderUserInfo.dart';
+import 'package:volunteersapp/data/models/authentication_cloud_firestore/type/MfaInfo.dart';
+import 'package:volunteersapp/data/models/authentication_cloud_firestore/type/ProviderUserInfo.dart';
 
 class UserInfo {
     final String? localId;

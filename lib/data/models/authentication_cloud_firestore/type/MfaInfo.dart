@@ -1,4 +1,4 @@
-import 'package:volunteersapp/data/models/authentication/type/MfaEnrollment.dart';
+import 'package:volunteersapp/data/models/authentication_cloud_firestore/type/MfaEnrollment.dart';
 
 class MfaInfo {
     final MfaEnrollment? mfaEnrollment;
